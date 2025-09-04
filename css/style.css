@@ -1,30 +1,306 @@
-/*
-Theme Name: Travelsite
-Theme URI: https://cozythemes.com/travelsite/
-Author: CozyThemes
-Author URI: https://cozythemes.com/
-Description: Travelsite serves as the child theme of FotaWP, inheriting all the features of FotaWP. It has been specifically tailored for the travel agency and offers block-based full site editing capabilities. It's minimal and clean design allows users to create various types of travel website, such as travel agencies, tour operators, travel blogger site and more. For further information about Travelsite, kindly explore the details available at https://cozythemes.com/travelsite/
-Template: fotawp
-Version: 1.0.1
-Requires at least: 5.9
-Tested up to: 6.6
-Requires PHP: 7.0
-License: GPLv3 or later
-License URI: http://www.gnu.org/licenses/gpl-3.0.html
-Text Domain: travelsite
-Tags: blog, one-column, custom-background, custom-colors, custom-logo, custom-menu, editor-style, featured-images, e-commerce, full-site-editing, block-patterns, full-width-template, rtl-language-support, threaded-comments, translation-ready, block-styles, wide-blocks
-*/
+:root {
+    --primary-color: #f39c12; /* L'orange/doré de votre design */
+    --dark-color: #1a1a1a;    /* Le noir du footer */
+    --text-color: #333;       /* Couleur du texte principal */
+    --light-gray-bg: #f9f9f9; /* Couleur de fond des sections claires */
+    --font-family: 'Poppins', sans-serif;
+}
 
-nav.wp-block-navigation ul li a:hover,
-.wp-block-button.is-style-outline a:hover {
-  color: var(--wp--preset--color--secondary) !important;
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
-.wp-block-cover.fotawp-cover-hover:hover .wp-block-cover__background {
-  background-color: var(--wp--preset--color--foreground) !important;
+
+html {
+    scroll-behavior: smooth;
 }
-.travelsite-cover-hover .wp-block-column {
-  overflow: hidden;
+
+body {
+    font-family: var(--font-family);
+    color: var(--text-color);
+    line-height: 1.7;
 }
-.travelsite-cover-hover .wp-block-cover:hover img {
-  transform: scale(1.2);
+
+.container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.section-padding {
+    padding: 80px 0;
+}
+
+.bg-light {
+    background-color: var(--light-gray-bg);
+}
+
+h1, h2, h3 {
+    line-height: 1.2;
+    margin-bottom: 20px;
+}
+
+h1 { font-size: 3.5rem; }
+h2 { font-size: 2.5rem; }
+
+.section-title {
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+.section-title h2 {
+    color: var(--text-color);
+}
+
+.section-title p {
+    font-size: 1.1rem;
+    color: #666;
+}
+
+
+/* ================================================= */
+/*                     HEADER & NAV                  */
+/* ================================================= */
+.main-header {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 100;
+    padding: 20px 0;
+}
+
+.main-nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo img {
+    height: 40px; /* Ajustez la taille de votre logo */
+}
+
+.btn-primary {
+    background-color: var(--primary-color);
+    color: white;
+    padding: 12px 25px;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: 500;
+    transition: background-color 0.3s ease;
+}
+
+.btn-primary:hover {
+    background-color: #e67e22; /* Une teinte plus foncée au survol */
+}
+
+
+/* ================================================= */
+/*                     SECTION HERO                  */
+/* ================================================= */
+.hero {
+    height: 100vh;
+    background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('../img/hero-plage.jpg') no-repeat center center/cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: white;
+}
+
+.hero-content {
+    max-width: 800px;
+}
+
+.hero-content p {
+    font-size: 1.2rem;
+    font-weight: 500;
+}
+
+
+/* ================================================= */
+/*                 SECTION PRÉSENTATION              */
+/* ================================================= */
+.presentation-grid {
+    display: grid;
+    grid-template-columns: 1fr 1.5fr;
+    gap: 60px;
+    align-items: center;
+}
+
+.presentation-image img {
+    width: 100%;
+    border-radius: 10px;
+}
+
+
+/* ================================================= */
+/*                    SECTION SERVICES               */
+/* ================================================= */
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+}
+
+.service-card {
+    background: white;
+    padding: 40px;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+}
+
+.service-icon {
+    width: 70px;
+    height: 70px;
+    margin: 0 auto 20px;
+    background-color: var(--primary-color);
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.8rem;
+}
+
+
+/* ================================================= */
+/*                 SECTION "UNE JOURNÉE À..."        */
+/* ================================================= */
+.destinations-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+}
+
+.destination-card {
+    position: relative;
+    border-radius: 15px;
+    overflow: hidden; /* Très important pour l'effet de zoom */
+    cursor: pointer;
+    color: white;
+}
+
+.destination-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.4s ease-out; /* L'animation de transition */
+}
+
+/* C'EST ICI QUE L'EFFET DE ZOOM EST DÉFINI */
+.destination-card:hover img {
+    transform: scale(1.1); /* Zoom de 10% */
+}
+
+.destination-info {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: 20px;
+    background: linear-gradient(to top, rgba(0,0,0,0.8), transparent);
+}
+.destination-info h3 { margin-bottom: 5px; }
+.destination-info span { font-size: 0.9rem; }
+
+
+/* ================================================= */
+/*                   SECTION TÉMOIGNAGES             */
+/* ================================================= */
+.testimonials-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+}
+
+.testimonial-card {
+    background: white;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+}
+
+.testimonial-author {
+    display: flex;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.testimonial-author img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    margin-right: 15px;
+}
+
+.testimonial-author span {
+    font-weight: bold;
+}
+
+/* ================================================= */
+/*                       FOOTER                      */
+/* ================================================= */
+.main-footer {
+    background-color: var(--dark-color);
+    color: #a0a0a0;
+    padding: 60px 0 0;
+}
+
+.footer-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 40px;
+    margin-bottom: 40px;
+}
+
+.footer-column h4 {
+    color: var(--primary-color);
+    margin-bottom: 20px;
+}
+
+.footer-column p, .footer-column li {
+    font-size: 0.9rem;
+    margin-bottom: 10px;
+}
+.footer-column ul { list-style: none; }
+.footer-column a { color: #a0a0a0; text-decoration: none; }
+.footer-column a:hover { color: white; }
+
+.footer-socials { margin-top: 20px; }
+.footer-socials a {
+    color: #a0a0a0;
+    font-size: 1.2rem;
+    margin-right: 15px;
+}
+.footer-socials a:hover { color: var(--primary-color); }
+
+.footer-bottom {
+    border-top: 1px solid #333;
+    text-align: center;
+    padding: 20px 0;
+    font-size: 0.9rem;
+}
+
+
+/* ================================================= */
+/*                 RESPONSIVE DESIGN                 */
+/* ================================================= */
+@media (max-width: 768px) {
+    h1 { font-size: 2.5rem; }
+    h2 { font-size: 2rem; }
+
+    .presentation-grid,
+    .services-grid,
+    .destinations-grid,
+    .testimonials-grid,
+    .footer-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .main-nav { flex-direction: column; }
+    .main-nav .logo { margin-bottom: 20px; }
 }
