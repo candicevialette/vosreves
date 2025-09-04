@@ -5,126 +5,90 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Partagez votre expérience - Vos Rêves</title>
     <meta name="description" content="Proposez votre propre récit de voyage et partagez votre 'journée à...' avec la communauté de Vos Rêves.">
-
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
+    <!-- ... vos autres balises head ... -->
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-
-    <header class="main-header">
-        <div class="container">
-            <nav class="main-nav">
-                <a href="index.html" class="logo">
-                    <img src="img/Vosreves_Logo.png" alt="Logo Vos Rêves">
-                </a>
-                <a href="index.html#contact" class="btn-primary">Contactez-nous</a>
-            </nav>
-        </div>
-    </header>
+    <header class="main-header"><!-- ... votre header ... --></header>
 
     <main>
         <section class="section-padding">
             <div class="container">
                 <div class="page-header">
                     <h1>Partagez votre expérience</h1>
-                    <p class="page-intro">
-                        Vous aussi, vous avez vécu une journée inoubliable que vous souhaitez partager ? Racontez-nous votre histoire et envoyez-nous vos plus belles photos. Les plus beaux récits seront publiés sur notre site !
-                    </p>
+                    <p class="page-intro">Racontez-nous votre histoire. Les plus beaux récits seront publiés sur notre site !</p>
                 </div>
 
-                <!-- Formulaire de soumission -->
-                <form action="#" method="POST" enctype="multipart/form-data" class="submission-form">
-                    
+                <form id="experience-form" class="submission-form">
                     <div class="form-group">
                         <label for="prenom">Votre prénom :</label>
                         <input type="text" id="prenom" name="prenom" required>
                     </div>
-
                     <div class="form-group">
-                        <label for="nom-initial">Première lettre de votre nom de famille :</label>
-                        <input type="text" id="nom-initial" name="nom-initial" maxlength="1" required>
+                        <label for="initiale_nom">Première lettre de votre nom de famille :</label>
+                        <input type="text" id="initiale_nom" name="initiale_nom" maxlength="1" required>
                     </div>
-
                     <div class="form-group">
-                        <label for="destination">Quelle était votre destination ? (Ex: Tikehau, Rangiroa)</label>
+                        <label for="destination">Quelle était votre destination ?</label>
                         <input type="text" id="destination" name="destination" placeholder="Le lieu de votre expérience" required>
                     </div>
-
                     <div class="form-group">
                         <label for="recit">Le récit de votre journée :</label>
-                        <textarea id="recit" name="recit" rows="15" placeholder="Décrivez votre journée, les lieux visités, vos émotions, vos conseils..." required></textarea>
+                        <textarea id="recit" name="recit" rows="10" placeholder="Décrivez votre journée, les lieux visités, vos émotions, vos conseils..." required></textarea>
                     </div>
 
-                    <div class="form-group">
-                        <label for="photos">Vos photos (entre 2 et 30) :</label>
-                        <input type="file" id="photos" name="photos[]" multiple accept="image/jpeg, image/png, image/gif">
-                        <p class="form-hint">Formats acceptés : JPG, PNG, GIF. Maintenez la touche Ctrl (ou Cmd sur Mac) pour sélectionner plusieurs fichiers.</p>
+                    <div class="form-actions">
+                        <button type="submit" id="submit-btn" class="btn-primary">Envoyer mon expérience</button>
                     </div>
-
-                    <div class="form-group">
-                        <label for="video">Votre vidéo (optionnel) :</label>
-                        <input type="file" id="video" name="video" accept="video/mp4, video/webm">
-                         <p class="form-hint">Formats recommandés : MP4, WebM. Taille maximale : 50MB.</p>
-                    </div>
-
-                    <button type="submit" class="btn-primary">Envoyer mon expérience</button>
-
+                    <p id="form-status"></p>
                 </form>
-
             </div>
         </section>
     </main>
 
-   <footer id="contact" class="main-footer">
-        <div class="container footer-grid">
-            <div class="footer-column">
-                <h4>Bordeaux</h4>
-                <p><strong>Adresse :</strong> 10 Cours Alsace et Lorraine</p>
-                <p><strong>Téléphone :</strong> 05 57 12 12 12</p>
-                <ul>
-                    <li>Lun: 14h-17h</li>
-                    <li>Mar-Ven: 9h-12h & 14h-18h</li>
-                    <li>Sam: 9h-17h</li>
-                </ul>
-            </div>
-            <div class="footer-column">
-                <h4>Lyon</h4>
-                <p><strong>Adresse :</strong> 100 rue de la Part Dieu</p>
-                <p><strong>Téléphone :</strong> 04 78 12 12 12</p>
-                <ul>
-                    <li>Mar-Ven: 8h30-12h & 14h-18h</li>
-                    <li>Sam: 9h-18h</li>
-                    <li>Lundi: Fermé</li>
-                </ul>
-            </div>
-            <div class="footer-column">
-                <h4>Marseille</h4>
-                <p><strong>Adresse :</strong> 10 Avenue Saint Antoine</p>
-                <p><strong>Téléphone :</strong> 04 91 12 12 12</p>
-                <ul>
-                    <li>Mar-Jeu: 8h30-12h & 14h-18h</li>
-                    <li>Ven: 8h30-12h30 & 13h30-18h</li>
-                    <li>Sam: 8h-18h</li>
-                </ul>
-            </div>
-            <div class="footer-column">
-                <h4>Supports</h4>
-                <p><i class="fas fa-envelope"></i> <a href="mailto:contact@vosreves.fr">contact@vosreves.fr</a></p>
-                <p><i class="fas fa-phone"></i> +01 234 567 890</p>
-                 <div class="footer-socials">
-                    <a href="#"><i class="fab fa-facebook-f"></i></a>
-                    <a href="#"><i class="fab fa-instagram"></i></a>
-                    <a href="#"><i class="fab fa-linkedin-in"></i></a>
-                </div>
-            </div>
-        </div>
-   </footer>
-    <!-- Le script swiper n'est pas nécessaire sur cette page, mais on peut le laisser pour la cohérence -->
-    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-    <script src="js/script.js"></script>
+    <footer id="contact" class="main-footer"><!-- ... votre footer ... --></footer>
+
+    <script>
+        const form = document.getElementById('experience-form');
+        const statusMessage = document.getElementById('form-status');
+        const submitButton = document.getElementById('submit-btn');
+
+        // COLLEZ L'URL DE VOTRE NOUVEAU SCRIPT GOOGLE ICI
+        const googleAppScriptUrl = 'VOTRE_NOUVELLE_URL_DE_SCRIPT_ICI';
+
+        form.addEventListener('submit', event => {
+            event.preventDefault();
+
+            statusMessage.textContent = 'Envoi en cours...';
+            statusMessage.style.color = '#333';
+            submitButton.disabled = true;
+
+            const formData = new FormData(form);
+            const data = Object.fromEntries(formData.entries());
+
+            // Ajout des données pour la base de données
+            data.date_soumission = new Date().toISOString();
+            data.etat = "Nouveau";
+
+            fetch(googleAppScriptUrl, {
+                method: 'POST',
+                mode: 'no-cors', // Important pour ce type de requête
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify(data)
+            })
+            .then(response => {
+                statusMessage.textContent = 'Merci ! Votre expérience a bien été envoyée.';
+                statusMessage.style.color = 'green';
+                form.reset();
+            })
+            .catch(error => {
+                statusMessage.textContent = 'Erreur lors de l\'envoi. Veuillez réessayer plus tard.';
+                statusMessage.style.color = 'red';
+            })
+            .finally(() => {
+                submitButton.disabled = false;
+            });
+        });
+    </script>
 </body>
 </html>
