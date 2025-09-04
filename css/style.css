@@ -18,9 +18,16 @@ body { font-family: var(--font-family); color: var(--text-color); line-height: 1
 h1, h2, h3 { line-height: 1.2; margin-bottom: 20px; }
 h1 { font-size: 3.5rem; }
 h2 { font-size: 2.5rem; }
+
 .section-title { text-align: center; margin-bottom: 60px; }
 .section-title h2 { color: var(--text-color); }
-.section-title p { font-size: 1.1rem; color: #666; }
+.section-title p {
+    font-size: 1.1rem;
+    color: #666;
+    /* --- MODIFICATION APPLIQUÉE ICI --- */
+    /* Marge inférieure augmentée pour décaler le bouton */
+    margin-bottom: 3rem;
+}
 
 /* ================================================= */
 /*                     HEADER & NAV                  */
@@ -75,10 +82,8 @@ h2 { font-size: 2.5rem; }
 /* ================================================= */
 /*      SECTION PARTAGEZ VOTRE EXPÉRIENCE          */
 /* ================================================= */
-#partagez .section-title {
-    text-align: center;
-}
-
+/* NOTE: Cette règle spécifique n'est plus nécessaire car la règle générale .section-title p s'en occupe déjà. */
+/* Vous pouvez la supprimer pour garder votre code propre. */
 #partagez .section-title h2 {
     font-size: 2.8rem;
     font-weight: 700;
@@ -90,9 +95,8 @@ h2 { font-size: 2.5rem; }
     font-size: 1.2rem;
     color: #7f8c8d;
     max-width: 600px;
-    /* --- CORRECTION ICI --- */
-    /* J'ai augmenté l'espace sous le texte de 2.5rem à 3rem pour éloigner le bouton */
-    margin: 0 auto 3rem auto; }
+    margin: 0 auto 3rem auto; 
+}
 
 /* ================================================= */
 /*                       FOOTER                      */
@@ -124,16 +128,13 @@ h2 { font-size: 2.5rem; }
 .gallery-container { padding-top: 0; padding-bottom: 0; }
 .swiper { width: 100%; max-width: 900px; margin: 0 auto; border-radius: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.15); }
 
-/* --- C'EST ICI LA CORRECTION IMPORTANTE --- */
 .swiper-slide {
-    /* On force un ratio 16:9 pour que chaque slide ait la même taille */
     aspect-ratio: 16 / 9;
-    background-color: #e0e0e0; /* Couleur de fond pendant le chargement */
+    background-color: #e0e0e0;
 }
 .swiper-slide img {
     width: 100%;
     height: 100%;
-    /* L'image remplit le conteneur sans se déformer. La magie est ici ! */
     object-fit: cover;
 }
 
@@ -157,7 +158,7 @@ h2 { font-size: 2.5rem; }
 /* ================================================= */
 .btn-back {
     display: inline-block;
-    margin-bottom: 2.5rem; /* Espace avant le début du texte */
+    margin-bottom: 2.5rem;
     color: var(--text-color);
     text-decoration: none;
     font-weight: 500;
@@ -211,11 +212,11 @@ h2 { font-size: 2.5rem; }
     border-radius: 5px;
     font-family: 'Poppins', sans-serif;
     font-size: 1rem;
-    box-sizing: border-box; /* Assure que le padding n'augmente pas la largeur */
+    box-sizing: border-box;
 }
 
 .form-group textarea {
-    resize: vertical; /* Permet à l'utilisateur de redimensionner verticalement */
+    resize: vertical;
 }
 
 .form-group input[type="file"] {
@@ -228,7 +229,6 @@ h2 { font-size: 2.5rem; }
     margin-top: 0.5rem;
 }
 
-/* Style pour le bouton d'envoi */
 .submission-form .btn-primary {
     display: inline-block;
     width: auto;
@@ -241,7 +241,6 @@ h2 { font-size: 2.5rem; }
    STYLES POUR FORMULAIRE DE CONTACT
    ============================= */
 
-/* Réutilisation des styles de la page de soumission */
 .submission-form {
     max-width: 800px;
     margin: 2rem auto 0;
@@ -251,7 +250,6 @@ h2 { font-size: 2.5rem; }
     box-shadow: 0 4px 15px rgba(0,0,0,0.05);
 }
 
-/* Grille pour les champs côte à côte */
 .form-row {
     display: flex;
     gap: 1.5rem;
@@ -263,7 +261,6 @@ h2 { font-size: 2.5rem; }
     min-width: 250px;
 }
 
-/* Groupes de boutons radio et checkbox */
 fieldset.form-group {
     border: none;
     padding: 0;
@@ -290,7 +287,6 @@ fieldset.form-group legend {
     font-weight: 400;
 }
 
-/* Boutons d'action */
 .form-actions {
     display: flex;
     gap: 1rem;
