@@ -1,6 +1,9 @@
+/* ================================================= */
+/*          RÉGLAGES GLOBAUX & VARIABLES             */
+/* ================================================= */
 :root {
     --primary-color: #f39c12; /* L'orange/doré de votre design */
-    --dark-color: #1a1a1a;    /* Le noir du footer */
+    --dark-color: #000000;    /* Le noir pur du footer */
     --text-color: #333;       /* Couleur du texte principal */
     --light-gray-bg: #f9f9f9; /* Couleur de fond des sections claires */
     --font-family: 'Poppins', sans-serif;
@@ -49,15 +52,8 @@ h2 { font-size: 2.5rem; }
     margin-bottom: 60px;
 }
 
-.section-title h2 {
-    color: var(--text-color);
-}
-
-.section-title p {
-    font-size: 1.1rem;
-    color: #666;
-}
-
+.section-title h2 { color: var(--text-color); }
+.section-title p { font-size: 1.1rem; color: #666; }
 
 /* ================================================= */
 /*                     HEADER & NAV                  */
@@ -78,7 +74,7 @@ h2 { font-size: 2.5rem; }
 }
 
 .logo img {
-    height: 40px; /* Ajustez la taille de votre logo */
+    height: 40px; 
 }
 
 .btn-primary {
@@ -92,16 +88,17 @@ h2 { font-size: 2.5rem; }
 }
 
 .btn-primary:hover {
-    background-color: #e67e22; /* Une teinte plus foncée au survol */
+    background-color: #e67e22; 
 }
-
 
 /* ================================================= */
 /*                     SECTION HERO                  */
 /* ================================================= */
 .hero {
     height: 100vh;
-    background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('../img/hero-plage.jpg') no-repeat center center/cover;
+    /* --- MODIFIEZ L'IMAGE DE FOND ICI --- */
+    /* Remplacez 'hero-palmier.jpg' par le nom de votre image dans le dossier /img */
+    background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('../img/hero-palmier.jpg') no-repeat center center/cover;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -109,15 +106,8 @@ h2 { font-size: 2.5rem; }
     color: white;
 }
 
-.hero-content {
-    max-width: 800px;
-}
-
-.hero-content p {
-    font-size: 1.2rem;
-    font-weight: 500;
-}
-
+.hero-content { max-width: 800px; }
+.hero-content p { font-size: 1.2rem; font-weight: 500; }
 
 /* ================================================= */
 /*                 SECTION PRÉSENTATION              */
@@ -133,7 +123,6 @@ h2 { font-size: 2.5rem; }
     width: 100%;
     border-radius: 10px;
 }
-
 
 /* ================================================= */
 /*                    SECTION SERVICES               */
@@ -165,6 +154,40 @@ h2 { font-size: 2.5rem; }
     font-size: 1.8rem;
 }
 
+/* ================================================= */
+/*       SECTION CRÉATION DE SOUVENIRS               */
+/* ================================================= */
+.memories-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    align-items: center;
+}
+
+.memories-images {
+    position: relative;
+    min-height: 400px; 
+}
+
+.memories-images img {
+    width: 80%;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    position: absolute;
+}
+
+.memories-images .image-back { top: 0; left: 0; transform: rotate(-8deg); }
+.memories-images .image-front { bottom: 0; right: 0; z-index: 2; transform: rotate(6deg); }
+
+.airplane-icon {
+    position: absolute;
+    top: -20px;
+    right: 50px;
+    font-size: 2rem;
+    color: var(--text-color);
+    transform: rotate(20deg);
+    opacity: 0.7;
+}
 
 /* ================================================= */
 /*                 SECTION "UNE JOURNÉE À..."        */
@@ -178,7 +201,7 @@ h2 { font-size: 2.5rem; }
 .destination-card {
     position: relative;
     border-radius: 15px;
-    overflow: hidden; /* Très important pour l'effet de zoom */
+    overflow: hidden; 
     cursor: pointer;
     color: white;
 }
@@ -188,13 +211,10 @@ h2 { font-size: 2.5rem; }
     height: 100%;
     object-fit: cover;
     display: block;
-    transition: transform 0.4s ease-out; /* L'animation de transition */
+    transition: transform 0.4s ease-out; 
 }
 
-/* C'EST ICI QUE L'EFFET DE ZOOM EST DÉFINI */
-.destination-card:hover img {
-    transform: scale(1.1); /* Zoom de 10% */
-}
+.destination-card:hover img { transform: scale(1.1); }
 
 .destination-info {
     position: absolute;
@@ -206,7 +226,6 @@ h2 { font-size: 2.5rem; }
 }
 .destination-info h3 { margin-bottom: 5px; }
 .destination-info span { font-size: 0.9rem; }
-
 
 /* ================================================= */
 /*                   SECTION TÉMOIGNAGES             */
@@ -224,29 +243,40 @@ h2 { font-size: 2.5rem; }
     box-shadow: 0 5px 15px rgba(0,0,0,0.05);
 }
 
-.testimonial-author {
-    display: flex;
-    align-items: center;
-    margin-top: 20px;
-}
-
-.testimonial-author img {
-    width: 50px;
-    height: 50px;
-    border-radius: 50%;
-    margin-right: 15px;
-}
-
-.testimonial-author span {
-    font-weight: bold;
-}
+.testimonial-author { margin-top: 20px; }
+.testimonial-author span { font-weight: bold; }
 
 /* ================================================= */
-/*                       FOOTER                      */
+/*            SECTION INSPIRATION                    */
+/* ================================================= */
+.inspiration-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+}
+
+.inspiration-card {
+    border-radius: 15px;
+    overflow: hidden; 
+    cursor: pointer;
+}
+
+.inspiration-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.4s ease-out;
+}
+
+.inspiration-card:hover img { transform: scale(1.1); }
+
+/* ================================================= */
+/*           FOOTER --- CODE CORRIGÉ ICI             */
 /* ================================================= */
 .main-footer {
-    background-color: var(--dark-color);
-    color: #a0a0a0;
+    background-color: var(--dark-color); /* Fond noir comme sur votre design */
+    color: #cccccc;                     /* Texte par défaut en gris très clair */
     padding: 60px 0 0;
 }
 
@@ -258,21 +288,38 @@ h2 { font-size: 2.5rem; }
 }
 
 .footer-column h4 {
-    color: var(--primary-color);
+    color: var(--primary-color); /* Titres en orange/doré */
     margin-bottom: 20px;
+    font-size: 1rem;
+    font-weight: bold;
 }
 
 .footer-column p, .footer-column li {
     font-size: 0.9rem;
     margin-bottom: 10px;
+    color: #cccccc; /* S'assure que le texte est clair */
 }
-.footer-column ul { list-style: none; }
-.footer-column a { color: #a0a0a0; text-decoration: none; }
+
+/* C'est la ligne qui colore les labels "Adresse:", "Téléphone:", etc. */
+.footer-column p strong {
+    color: var(--primary-color);
+    font-weight: 500;
+}
+
+.footer-column ul { 
+    list-style: none; 
+    padding: 0;
+}
+.footer-column a { 
+    color: #cccccc; 
+    text-decoration: none; 
+    transition: color 0.3s ease;
+}
 .footer-column a:hover { color: white; }
 
 .footer-socials { margin-top: 20px; }
 .footer-socials a {
-    color: #a0a0a0;
+    color: #cccccc;
     font-size: 1.2rem;
     margin-right: 15px;
 }
@@ -283,24 +330,38 @@ h2 { font-size: 2.5rem; }
     text-align: center;
     padding: 20px 0;
     font-size: 0.9rem;
+    color: #777;
 }
-
 
 /* ================================================= */
 /*                 RESPONSIVE DESIGN                 */
 /* ================================================= */
+@media (max-width: 992px) {
+    .footer-grid {
+        grid-template-columns: repeat(2, 1fr); /* 2 colonnes sur tablette */
+    }
+}
+
 @media (max-width: 768px) {
     h1 { font-size: 2.5rem; }
     h2 { font-size: 2rem; }
 
-    .presentation-grid,
-    .services-grid,
-    .destinations-grid,
-    .testimonials-grid,
-    .footer-grid {
+    .presentation-grid, .services-grid, .testimonials-grid, .memories-grid {
         grid-template-columns: 1fr;
     }
+    
+    .memories-text { text-align: center; }
+    .memories-images { margin-top: 40px; min-height: 350px; }
 
+    .destinations-grid, .inspiration-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
     .main-nav { flex-direction: column; }
     .main-nav .logo { margin-bottom: 20px; }
+}
+
+@media (max-width: 576px) {
+    .destinations-grid, .inspiration-grid, .footer-grid {
+        grid-template-columns: 1fr; /* 1 colonne sur mobile */
+    }
 }
