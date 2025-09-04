@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nos Destinations - Vos Rêves</title>
+    <meta name="description" content="Explorez nos destinations de rêve sur notre carte interactive.">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <header class="main-header">
+        <div class="container">
+            <nav class="main-nav">
+                <a href="index.html" class="logo">
+                    <img src="img/Vosreves_Logo.png" alt="Logo Vos Rêves">
+                </a>
+                <a href="index.html#contact" class="btn-primary">Contactez-nous</a>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section id="map-page-section" class="section-padding">
+            <div class="container">
+                <div class="section-title">
+                    <h2>Explorez Nos Destinations</h2>
+                    <p>Cliquez sur un point pour découvrir les trésors que chaque lieu a à offrir.</p>
+                </div>
+
+                <div class="map-layout">
+                    <!-- Colonne de la carte -->
+                    <div class="map-container">
+                        <svg version="1.1" id="world-map" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 1000 520">
+                            <!-- Fond de carte (simplifié) -->
+                            <path class="land" d="M998,293 l-10-10 ... Z" /> <!-- Le long chemin SVG de la carte va ici -->
+                            
+                            <!-- Points des Destinations -->
+                            <!-- Polynésie -->
+                            <circle class="location-dot" data-destination="fakarava" cx="240" cy="325" r="8" />
+                            <circle class="location-dot" data-destination="tikehau" cx="245" cy="315" r="8" />
+                            <circle class="location-dot" data-destination="rangiroa" cx="250" cy="320" r="8" />
+                            <circle class="location-dot" data-destination="tuamotu" cx="260" cy="322" r="8" />
+
+                            <!-- Amérique du Nord -->
+                            <circle class="location-dot" data-destination="newyork" cx="280" cy="160" r="8" />
+                            <circle class="location-dot" data-destination="californie" cx="190" cy="180" r="8" />
+                            <circle class="location-dot" data-destination="quebec" cx="300" cy="130" r="8" />
+
+                            <!-- Destinations inventées -->
+                            <circle class="location-dot" data-destination="japon" cx="840" cy="180" r="8" />
+                            <circle class="location-dot" data-destination="islande" cx="470" cy="80" r="8" />
+                            <circle class="location-dot" data-destination="costarica" cx="255" cy="280" r="8" />
+                        </svg>
+                    </div>
+
+                    <!-- Colonne des informations -->
+                    <div class="destination-info-panel">
+                        <div id="info-initial" class="info-content active">
+                            <h3>Bienvenue</h3>
+                            <p>Sélectionnez une destination sur la carte pour commencer votre voyage.</p>
+                        </div>
+                        <!-- Les contenus des destinations seront insérés ici par JavaScript -->
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+     <!-- ======== FOOTER (PIED DE PAGE) ======== -->
+    <footer id="contact" class="main-footer">
+        <div class="container footer-grid">
+            <div class="footer-column">
+                <h4>Bordeaux</h4>
+                <p><strong>Adresse :</strong> 10 Cours Alsace et Lorraine</p>
+                <p><strong>Téléphone :</strong> 05 57 12 12 12</p>
+                <ul>
+                    <li>Lun: 14h-17h</li>
+                    <li>Mar-Ven: 9h-12h & 14h-18h</li>
+                    <li>Sam: 9h-17h</li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h4>Lyon</h4>
+                <p><strong>Adresse :</strong> 100 rue de la Part Dieu</p>
+                <p><strong>Téléphone :</strong> 04 78 12 12 12</p>
+                <ul>
+                    <li>Mar-Ven: 8h30-12h & 14h-18h</li>
+                    <li>Sam: 9h-18h</li>
+                    <li>Lundi: Fermé</li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h4>Marseille</h4>
+                <p><strong>Adresse :</strong> 10 Avenue Saint Antoine</p>
+                <p><strong>Téléphone :</strong> 04 91 12 12 12</p>
+                <ul>
+                    <li>Mar-Jeu: 8h30-12h & 14h-18h</li>
+                    <li>Ven: 8h30-12h30 & 13h30-18h</li>
+                    <li>Sam: 8h-18h</li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h4>Supports</h4>
+                <p><i class="fas fa-envelope"></i> <a href="mailto:contact@vosreves.fr">contact@vosreves.fr</a></p>
+                <p><i class="fas fa-phone"></i> +01 234 567 890</p>
+                 <div class="footer-socials">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 Vos Rêves. Tous droits réservés.</p>
+        </div>
+    </footer>
+
+    <!-- Le chemin vers le script JS est crucial -->
+    <script src="js/script2.js"></script>
+</body>
+</html>
