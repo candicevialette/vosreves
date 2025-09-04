@@ -365,3 +365,100 @@ h2 { font-size: 2.5rem; }
         grid-template-columns: 1fr; /* 1 colonne sur mobile */
     }
 }
+/* ================================================= */
+/*          PAGE ARTICLE "UNE JOURNÉE À..."          */
+/* ================================================= */
+.article-hero {
+    min-height: 45vh; /* Un hero plus petit que la page d'accueil */
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: white;
+    position: relative;
+}
+
+/* Ajoute un filtre sombre pour que le texte soit lisible */
+.article-hero::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background-color: rgba(0,0,0,0.5);
+}
+
+.article-layout {
+    display: grid;
+    grid-template-columns: 2fr 1fr; /* 2/3 pour le texte, 1/3 pour la galerie */
+    gap: 50px;
+    align-items: flex-start;
+}
+
+.article-content h2 {
+    font-size: 2.2rem;
+    color: var(--text-color);
+}
+
+.article-intro {
+    font-style: italic;
+    color: #666;
+    margin-bottom: 2rem;
+    border-left: 3px solid var(--primary-color);
+    padding-left: 15px;
+}
+
+.article-content p {
+    margin-bottom: 1.5rem;
+}
+
+.article-gallery h3, .article-content h3 {
+    font-size: 1.5rem;
+    margin-bottom: 1.5rem;
+    color: var(--text-color);
+}
+
+/* Style du carrousel */
+.swiper {
+    width: 100%;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+.swiper-slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Personnalisation des flèches et points de Swiper avec votre couleur orange */
+:root {
+    --swiper-navigation-color: var(--primary-color);
+    --swiper-pagination-color: var(--primary-color);
+}
+
+/* Style du conteneur vidéo */
+.video-container {
+    position: relative;
+    padding-bottom: 56.25%; /* Ratio 16:9 */
+    height: 0;
+    overflow: hidden;
+    max-width: 100%;
+    background: #000;
+    border-radius: 10px;
+    margin-top: 1rem;
+}
+
+.video-container video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+/* Pour supprimer le soulignement des liens sur les cartes de la page d'accueil */
+.destination-link {
+    text-decoration: none;
+}
