@@ -571,3 +571,90 @@ textarea {
 .back-link:hover {
     color: #F5A623; /* Le texte devient orange au survol */
 }
+/* ... (Tous les styles globaux, header, hero, etc. restent les mêmes) ... */
+
+/* ================================================= */
+/*       SECTION CRÉATION DE SOUVENIRS (MISE À JOUR) */
+/* ================================================= */
+/* Ancien style de grille à 2 colonnes supprimé */
+.memories-grid-updated {
+    text-align: center;
+}
+.memories-text {
+    max-width: 700px;
+    margin: 0 auto;
+}
+.memories-text .btn-primary {
+    margin-top: 20px;
+}
+
+/* ... (Les styles pour "Une journée à", témoignages, etc. restent les mêmes) ... */
+
+/* ================================================= */
+/*         NOUVEAUX STYLES POUR LA PAGE CARTE        */
+/* ================================================= */
+#map-page-section {
+    padding-top: 120px; /* Espace pour le header fixe */
+    background-color: #f9f9f9;
+}
+
+.map-layout {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 40px;
+    align-items: flex-start;
+    background-color: white;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 10px 40px rgba(0,0,0,0.1);
+}
+
+.map-container svg {
+    width: 100%;
+    height: auto;
+}
+.land { fill: #e0e0e0; stroke: #fff; stroke-width: 1px; }
+
+.location-dot {
+    fill: var(--primary-color);
+    cursor: pointer;
+    transition: all 0.3s ease;
+    stroke: white;
+    stroke-width: 2px;
+}
+.location-dot:hover, .location-dot.active {
+    fill: #e67e22; /* Orange plus foncé */
+    r: 12; /* Agrandit le point au survol */
+}
+
+.destination-info-panel {
+    position: relative;
+    height: 100%;
+    min-height: 400px;
+}
+.info-content {
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%;
+    opacity: 0;
+    transition: opacity 0.5s ease;
+    visibility: hidden;
+}
+.info-content.active {
+    opacity: 1;
+    visibility: visible;
+}
+.info-content h3 {
+    color: var(--primary-color);
+    margin-bottom: 15px;
+}
+.info-content p {
+    line-height: 1.8;
+}
+
+/* ... (Le reste du CSS, footer, responsive, etc., reste identique) ... */
+@media (max-width: 992px) {
+    .map-layout {
+        grid-template-columns: 1fr;
+    }
+}
