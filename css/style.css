@@ -136,3 +136,23 @@ h2 { font-size: 2.5rem; }
     .main-nav .logo { margin-bottom: 20px; }
 }
 @media (max-width: 576px) { .destinations-grid, .inspiration-grid, .footer-grid { grid-template-columns: 1fr; } }
+/* ================================================= */
+/*          BOUTON RETOUR POUR LES ARTICLES          */
+/* ================================================= */
+.btn-back {
+    display: inline-block;
+    margin-bottom: 2.5rem; /* Espace avant le début du texte */
+    color: var(--text-color);
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+.btn-back i {
+    margin-right: 8px;
+    color: var(--primary-color);
+}
+
+.btn-back:hover {
+    color: var(--primary-color);
+}
