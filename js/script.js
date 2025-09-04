@@ -1,4 +1,3 @@
-
 // Initialisation du carrousel SwiperJS
 // Ce code s'exécute uniquement si un élément avec la classe .swiper est trouvé sur la page.
 const swiper = new Swiper('.swiper', {
