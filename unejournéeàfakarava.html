@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale-1.0">
+    <title>Une journée à Tikehau - Vos Rêves</title>
+    <meta name="description" content="Découvrez le récit et les photos d'une journée inoubliable à Tikehau, en Polynésie Française.">
+
+    <!-- Police depuis Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap" rel="stylesheet">
+    
+    <!-- Icônes depuis Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+    <!-- CSS de la bibliothèque SwiperJS (pour le carrousel) -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
+
+    <!-- Lien vers votre feuille de style CSS principale -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <!-- ======== HEADER (IDENTIQUE À LA PAGE D'ACCUEIL) ======== -->
+    <header class="main-header">
+        <div class="container">
+            <nav class="main-nav">
+                <a href="index.html" class="logo">
+                    <img src="img/Vosreves_Logo.png" alt="Logo Vos Rêves">
+                </a>
+                <a href="index.html#contact" class="btn-primary">Contactez-nous</a>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <!-- ======== HERO DE L'ARTICLE ======== -->
+        <section class="article-hero" style="background-image: url('../img/Une Journée à TIKEHAU-20250702/Soir_Tikehau.JPG');">
+            <div class="hero-content">
+                <p>Polynésie Française</p>
+                <h1>Une journée à Tikehau</h1>
+            </div>
+        </section>
+
+        <!-- ======== CORPS DE L'ARTICLE ======== -->
+        <section class="section-padding">
+            <div class="container article-layout">
+
+                <!-- COLONNE GAUCHE : TEXTE ET VIDÉO -->
+                <div class="article-content">
+                    <h2>Le paradis des sables roses</h2>
+                    <p class="article-intro">
+                        Récit de Jean et Hélène D., voyage de noces en Juillet 2025.
+                    </p>
+                    <p>
+                        Notre journée à Tikehau a commencé par un réveil en douceur dans notre bungalow sur pilotis. Le lagon, d'un calme absolu, s'étendait à perte de vue. Après un petit-déjeuner de fruits exotiques, nous sommes partis en excursion en bateau vers l'île aux oiseaux, un sanctuaire incroyable où des milliers d'oiseaux marins nichent en toute tranquillité.
+                    </p>
+                    <p>
+                        L'après-midi a été consacré au snorkeling dans ce que Cousteau appelait "l'atoll le plus poissonneux du monde". Et il n'avait pas tort ! Nous avons nagé au milieu de nuées de poissons multicolores, de raies majestueuses et même de quelques requins à pointe noire, totalement inoffensifs. C'était un véritable aquarium à ciel ouvert.
+                    </p>
+
+                    <!-- Section Vidéo (à décommenter si vous en avez une) -->
+                    <h3>Souvenir en vidéo</h3>
+                    <div class="video-container">
+                        <!-- Mettez le chemin de votre vidéo dans src="" -->
+                        <video controls poster="img/Une Journée à TIKEHAU-20250702/Soir_Tikehau.JPG">
+                            <source src="img/videos/tikehau.mp4" type="video/mp4">
+                            Votre navigateur ne supporte pas la lecture de vidéos.
+                        </video>
+                    </div>
+                </div>
+
+                <!-- COLONNE DROITE : CARROUSEL DE PHOTOS -->
+                <aside class="article-gallery">
+                    <h3>Notre galerie photo</h3>
+                    
+                    <!-- Structure du Carrousel SwiperJS -->
+                    <div class="swiper">
+                        <div class="swiper-wrapper">
+                            <!-- Slide 1 : Mettez vos 10 photos ici -->
+                            <div class="swiper-slide"><img src="img/Une Journée à TIKEHAU-20250702/Soir_Tikehau.JPG" alt="Photo 1 de Tikehau"></div>
+                            <div class="swiper-slide"><img src="img/Une Journée à TIKEHAU-20250702/Sable_Rose.JPG" alt="Photo 2 de Tikehau"></div>
+                            <div class="swiper-slide"><img src="img/Une Journée à TIKEHAU-20250702/Ile_aux_oiseaux.JPG" alt="Photo 3 de Tikehau"></div>
+                            <!-- ... Ajoutez les 7 autres photos de la même manière ... -->
+                        </div>
+                        
+                        <!-- Flèches de navigation -->
+                        <div class="swiper-button-next"></div>
+                        <div class="swiper-button-prev"></div>
+
+                        <!-- Points de pagination -->
+                        <div class="swiper-pagination"></div>
+                    </div>
+                </aside>
+            </div>
+        </section>
+    </main>
+
+    <!-- ======== FOOTER (IDENTIQUE À LA PAGE D'ACCUEIL) ======== -->
+    <footer id="contact" class="main-footer">
+        <!-- ... Copiez-collez ici l'intégralité du footer de votre fichier index.html ... -->
+    </footer>
+
+    <!-- JS de la bibliothèque SwiperJS (pour le carrousel) -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+    <!-- Lien vers votre fichier JavaScript principal -->
+    <script src="js/script.js"></script>
+</body>
+</html>
