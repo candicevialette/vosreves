@@ -1,113 +1,130 @@
-<?php
-// =================================================================
-// SCRIPT POUR ENVOYER LES DONNÉES DU FORMULAIRE À DISCORD
-// =================================================================
-
-// 1. URL DE VOTRE WEBHOOK DISCORD
-// L'URL que vous avez fournie a été insérée ici.
-$webhook_url = 'https://discord.com/api/webhooks/1413146432818647060/XW7Wwsthv5TRnIlkNPojH9Z5mqJLwrDszKYcYMAUGa7HweuldnGjJxd9QY-PzdO65bv8';
-
-// 2. VÉRIFICATION QUE LE FORMULAIRE A BIEN ÉTÉ ENVOYÉ
-if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
-    // Si quelqu'un accède à ce script directement sans envoyer le formulaire.
-    header('Location: index.html'); // Redirige vers la page d'accueil
-    exit();
-}
-
-// 3. RÉCUPÉRATION DES DONNÉES DU FORMULAIRE (avec une sécurité de base)
-$prenom = htmlspecialchars($_POST['prenom'] ?? 'Non fourni');
-$nom_initial = htmlspecialchars($_POST['nom-initial'] ?? 'N');
-$destination = htmlspecialchars($_POST['destination'] ?? 'Non fournie');
-$recit = htmlspecialchars($_POST['recit'] ?? 'Aucun récit fourni.');
-
-// Limiter la longueur du récit pour l'affichage dans Discord
-if (strlen($recit) > 1900) {
-    $recit = substr($recit, 0, 1900) . '... (récit trop long pour un aperçu)';
-}
-
-// 4. PRÉPARATION DU MESSAGE POUR DISCORD (FORMAT "EMBED")
-// C'est ce qui rend le message joli et bien structuré
-$embed_data = [
-    'username' => 'Soumission - Vos Rêves', // Nom du bot qui poste le message
-    'avatar_url' => 'https://i.imgur.com/gLhG8ZU.png', // Logo simple pour le bot
-    'embeds' => [
-        [
-            'title' => 'Nouvelle expérience de voyage à ' . $destination,
-            'color' => hexdec('3498db'), // Couleur de la barre latérale (bleu)
-            'author' => [
-                'name' => $prenom . ' ' . $nom_initial . '.'
-            ],
-            'fields' => [
-                [
-                    'name' => 'Destination',
-                    'value' => $destination,
-                    'inline' => true
-                ],
-                [
-                    'name' => 'Auteur',
-                    'value' => $prenom . ' ' . $nom_initial . '.',
-                    'inline' => true
-                ],
-                [
-                    'name' => 'Récit de la journée',
-                    'value' => $recit
-                ],
-                [
-                    'name' => 'Fichiers',
-                    'value' => 'Les photos et vidéos n\'apparaissent pas ici. Elles devront être gérées manuellement à partir de l\'email ou du serveur.'
-                ]
-            ],
-            'footer' => [
-                'text' => 'Soumission reçue le ' . date('d/m/Y à H:i')
-            ]
-        ]
-    ]
-];
-
-// Convertir les données en format JSON
-$json_data = json_encode($embed_data, JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE);
-
-// 5. ENVOI DES DONNÉES AU WEBHOOK AVEC cURL
-$ch = curl_init($webhook_url);
-curl_setopt($ch, CURLOPT_HTTPHEADER, ['Content-type: application/json']);
-curl_setopt($ch, CURLOPT_POST, 1);
-curl_setopt($ch, CURLOPT_POSTFIELDS, $json_data);
-curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false); // Important pour certains hébergeurs
-
-$response = curl_exec($ch);
-$http_code = curl_getinfo($ch, CURLINFO_HTTP_CODE);
-curl_close($ch);
-
-// 6. AFFICHAGE D'UNE PAGE DE CONFIRMATION À L'UTILISATEUR
-// Cette page s'affichera après que l'utilisateur ait cliqué sur "Envoyer"
-?>
 <!DOCTYPE html>
 <html lang="fr">
 <head>
     <meta charset="UTF-8">
-    <title>Merci pour votre soumission !</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Partagez votre expérience - Vos Rêves</title>
+    <meta name="description" content="Proposez votre propre récit de voyage et partagez votre 'journée à...' avec la communauté de Vos Rêves.">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap" rel="stylesheet">
-    <style>
-        body { font-family: 'Poppins', sans-serif; text-align: center; padding: 50px; background-color: #f4f4f4; }
-        .container { max-width: 600px; margin: auto; background: #fff; padding: 30px; border-radius: 8px; box-shadow: 0 0 10px rgba(0,0,0,0.1); }
-        h1 { color: #333; }
-        a { display: inline-block; margin-top: 20px; padding: 10px 20px; background-color: #007bff; color: #fff; text-decoration: none; border-radius: 5px; }
-    </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <!-- Le CSS de Swiper n'est pas utilisé ici, mais on le garde pour la cohérence du template -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
+    <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-    <div class="container">
-        <?php
-        if ($http_code >= 200 && $http_code < 300) {
-            echo "<h1>Merci, " . $prenom . " !</h1><p>Votre expérience a bien été envoyée sur notre serveur. Nous allons l'examiner prochainement.</p>";
-        } else {
-            echo "<h1>Erreur</h1><p>Une erreur est survenue lors de l'envoi de votre expérience. Veuillez réessayer plus tard ou nous contacter directement.</p>";
-            // Pour le débogage, vous pouvez afficher les lignes suivantes (à supprimer en production)
-            // echo "<p>Code d'erreur : $http_code</p>";
-            // echo "<p>Réponse de Discord : $response</p>";
-        }
-        ?>
-        <a href="index.html">Retour à l'accueil</a>
-    </div>
+
+    <header class="main-header">
+        <div class="container">
+            <nav class="main-nav">
+                <a href="index.html" class="logo">
+                    <img src="img/Vosreves_Logo.png" alt="Logo Vos Rêves">
+                </a>
+                <a href="index.html#contact" class="btn-primary">Contactez-nous</a>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="section-padding">
+            <div class="container">
+                <div class="page-header">
+                    <h1>Partagez votre expérience</h1>
+                    <p class="page-intro">
+                        Vous aussi, vous avez vécu une journée inoubliable que vous souhaitez partager ? Racontez-nous votre histoire. Les plus beaux récits seront publiés sur notre site !
+                    </p>
+                </div>
+
+                <!-- 
+                  FORMULAIRE CONFIGURÉ POUR GITHUB PAGES AVEC FORMSPREE
+                  Remplacez "VOTRE_CODE_UNIQUE" ci-dessous par le code fourni par Formspree.
+                -->
+                <form action="https://formspree.io/f/VOTRE_CODE_UNIQUE" method="POST" class="submission-form">
+                    
+                    <div class="form-group">
+                        <label for="prenom">Votre prénom :</label>
+                        <input type="text" id="prenom" name="Prénom" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="nom-initial">Première lettre de votre nom de famille :</label>
+                        <input type="text" id="nom-initial" name="Initiale Nom" maxlength="1" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="destination">Quelle était votre destination ? (Ex: Tikehau, Rangiroa)</label>
+                        <input type="text" id="destination" name="Destination" placeholder="Le lieu de votre expérience" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="recit">Le récit de votre journée :</label>
+                        <textarea id="recit" name="Récit" rows="15" placeholder="Décrivez votre journée, les lieux visités, vos émotions, vos conseils..." required></textarea>
+                    </div>
+                    
+                    <!-- Information sur les fichiers -->
+                    <div class="form-group file-info">
+                        <h4>Concernant les photos et vidéos</h4>
+                        <p class="form-hint">
+                            L'envoi de fichiers n'est pas supporté directement par ce formulaire. 
+                            <strong>Si votre récit est sélectionné, nous vous contacterons par e-mail</strong> pour récupérer vos magnifiques photos et vidéos !
+                        </p>
+                    </div>
+
+                    <button type="submit" class="btn-primary">Envoyer mon expérience</button>
+
+                </form>
+
+            </div>
+        </section>
+    </main>
+
+   <footer id="contact" class="main-footer">
+        <div class="container footer-grid">
+            <div class="footer-column">
+                <h4>Bordeaux</h4>
+                <p><strong>Adresse :</strong> 10 Cours Alsace et Lorraine</p>
+                <p><strong>Téléphone :</strong> 05 57 12 12 12</p>
+                <ul>
+                    <li>Lun: 14h-17h</li>
+                    <li>Mar-Ven: 9h-12h & 14h-18h</li>
+                    <li>Sam: 9h-17h</li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h4>Lyon</h4>
+                <p><strong>Adresse :</strong> 100 rue de la Part Dieu</p>
+                <p><strong>Téléphone :</strong> 04 78 12 12 12</p>
+                <ul>
+                    <li>Mar-Ven: 8h30-12h & 14h-18h</li>
+                    <li>Sam: 9h-18h</li>
+                    <li>Lundi: Fermé</li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h4>Marseille</h4>
+                <p><strong>Adresse :</strong> 10 Avenue Saint Antoine</p>
+                <p><strong>Téléphone :</strong> 04 91 12 12 12</p>
+                <ul>
+                    <li>Mar-Jeu: 8h30-12h & 14h-18h</li>
+                    <li>Ven: 8h30-12h30 & 13h30-18h</li>
+                    <li>Sam: 8h-18h</li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h4>Supports</h4>
+                <p><i class="fas fa-envelope"></i> <a href="mailto:contact@vosreves.fr">contact@vosreves.fr</a></p>
+                <p><i class="fas fa-phone"></i> +01 234 567 890</p>
+                 <div class="footer-socials">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                </div>
+            </div>
+        </div>
+   </footer>
+    
+    <script src="js/script.js"></script>
 </body>
 </html>
