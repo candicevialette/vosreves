@@ -1,0 +1,30 @@
+/*
+Theme Name: Travelsite
+Theme URI: https://cozythemes.com/travelsite/
+Author: CozyThemes
+Author URI: https://cozythemes.com/
+Description: Travelsite serves as the child theme of FotaWP, inheriting all the features of FotaWP. It has been specifically tailored for the travel agency and offers block-based full site editing capabilities. It's minimal and clean design allows users to create various types of travel website, such as travel agencies, tour operators, travel blogger site and more. For further information about Travelsite, kindly explore the details available at https://cozythemes.com/travelsite/
+Template: fotawp
+Version: 1.0.1
+Requires at least: 5.9
+Tested up to: 6.6
+Requires PHP: 7.0
+License: GPLv3 or later
+License URI: http://www.gnu.org/licenses/gpl-3.0.html
+Text Domain: travelsite
+Tags: blog, one-column, custom-background, custom-colors, custom-logo, custom-menu, editor-style, featured-images, e-commerce, full-site-editing, block-patterns, full-width-template, rtl-language-support, threaded-comments, translation-ready, block-styles, wide-blocks
+*/
+
+nav.wp-block-navigation ul li a:hover,
+.wp-block-button.is-style-outline a:hover {
+  color: var(--wp--preset--color--secondary) !important;
+}
+.wp-block-cover.fotawp-cover-hover:hover .wp-block-cover__background {
+  background-color: var(--wp--preset--color--foreground) !important;
+}
+.travelsite-cover-hover .wp-block-column {
+  overflow: hidden;
+}
+.travelsite-cover-hover .wp-block-cover:hover img {
+  transform: scale(1.2);
+}
