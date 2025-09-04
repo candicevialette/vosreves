@@ -108,11 +108,103 @@
         </section>
     </main>
 
-    <footer id="contact" class="main-footer"><!-- Votre footer existant ici --></footer>
+    <footer id="contact" class="main-footer">
+        <div class="container footer-grid">
+            <div class="footer-column">
+                <h4>Bordeaux</h4>
+                <p><strong>Adresse :</strong> 10 Cours Alsace et Lorraine</p>
+                <p><strong>Téléphone :</strong> 05 57 12 12 12</p>
+                <ul>
+                    <li>Lun: 14h-17h</li>
+                    <li>Mar-Ven: 9h-12h & 14h-18h</li>
+                    <li>Sam: 9h-17h</li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h4>Lyon</h4>
+                <p><strong>Adresse :</strong> 100 rue de la Part Dieu</p>
+                <p><strong>Téléphone :</strong> 04 78 12 12 12</p>
+                <ul>
+                    <li>Mar-Ven: 8h30-12h & 14h-18h</li>
+                    <li>Sam: 9h-18h</li>
+                    <li>Lundi: Fermé</li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h4>Marseille</h4>
+                <p><strong>Adresse :</strong> 10 Avenue Saint Antoine</p>
+                <p><strong>Téléphone :</strong> 04 91 12 12 12</p>
+                <ul>
+                    <li>Mar-Jeu: 8h30-12h & 14h-18h</li>
+                    <li>Ven: 8h30-12h30 & 13h30-18h</li>
+                    <li>Sam: 8h-18h</li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h4>Supports</h4>
+                <p><i class="fas fa-envelope"></i> <a href="mailto:contact@vosreves.fr">contact@vosreves.fr</a></p>
+                <p><i class="fas fa-phone"></i> +01 234 567 890</p>
+                 <div class="footer-socials">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 Vos Rêves. Tous droits réservés.</p>
+        </div>
+    </footer>
+
 
     <!-- Le JavaScript qui fera fonctionner le formulaire se trouvera ici -->
-    <script>
-        // La logique sera ajoutée à l'étape 3
+     <script>
+        const form = document.getElementById('info-form');
+        const statusMessage = document.getElementById('form-status');
+        const submitButton = document.getElementById('submit-btn');
+
+        // COLLEZ L'URL DE VOTRE APPLICATION WEB GOOGLE ICI
+        const googleAppScriptUrl = 'https://script.google.com/macros/s/AKfycby3em_z_lPlykqCff8h276QFUCIpPaZL57Keyst13v3D92GlnLZMo997morhKLYbbN4ZA/exec';
+
+        form.addEventListener('submit', event => {
+            event.preventDefault();
+
+            statusMessage.textContent = 'Envoi en cours...';
+            statusMessage.style.color = '#333';
+            submitButton.disabled = true;
+
+            const formData = new FormData(form);
+            const data = Object.fromEntries(formData.entries());
+
+            // Gérer les checkboxes pour les envoyer comme une liste
+            data.infos = formData.getAll('infos');
+
+            // Ajout des données requises par le professeur
+            data.date_creation = new Date().toISOString();
+            data.etat = "Nouveau";
+
+            fetch(googleAppScriptUrl, {
+                method: 'POST',
+                mode: 'no-cors', // Important pour ce type de requête
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(data)
+            })
+            .then(response => {
+                statusMessage.textContent = 'Merci ! Votre demande a bien été envoyée.';
+                statusMessage.style.color = 'green';
+                form.reset();
+            })
+            .catch(error => {
+                statusMessage.textContent = 'Erreur lors de l\'envoi. Veuillez réessayer plus tard.';
+                statusMessage.style.color = 'red';
+                console.error('Error:', error);
+            })
+            .finally(() => {
+                submitButton.disabled = false;
+            });
+        });
     </script>
 </body>
 </html>
