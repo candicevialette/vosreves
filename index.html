@@ -24,8 +24,12 @@
         <div class="container">
             <nav class="main-nav">
                 <a href="index.html" class="logo">
+                    <!-- Mettez votre logo ici -->
                     <img src="img/Vosreves_Logo.png" alt="Logo Vos Rêves">
                 </a>
+                <ul class="nav-links">
+                    <!-- Ajoutez d'autres liens de menu ici si besoin -->
+                </ul>
                 <a href="#contact" class="btn-primary">Contactez-nous</a>
             </nav>
         </div>
@@ -44,12 +48,13 @@
         <section id="presentation" class="section-padding">
             <div class="container presentation-grid">
                 <div class="presentation-image">
+                    <!-- Mettez la photo du directeur ici -->
                     <img src="img/lastour.png" alt="M. Latour, fondateur de Vos Rêves">
                 </div>
                 <div class="presentation-text">
                     <h2>Présentation de l'entreprise :</h2>
                     <p>
-                        Depuis 1999, Vos Rêves organise des voyages de luxe clé en main...
+                        Depuis 1999, Vos Rêves organise des voyages de luxe clé en main, spécialisés en séjours haut de gamme en Amérique du Nord et en Polynésie Française. Grâce à l'expérience de son fondateur, M. Latour, et à ses agences à Paris, Bordeaux, Lyon et Marseille, l'entreprise propose des séjours personnalisés adaptés à chaque client. Reconnue pour son expertise et son service de qualité, Vos Rêves transforme chaque voyage en une expérience unique.
                     </p>
                 </div>
             </div>
@@ -59,35 +64,54 @@
         <section id="services" class="section-padding bg-light">
             <div class="container">
                 <div class="section-title">
+                    <!-- Titre modifiable -->
                     <h2>Nos Services Exclusifs</h2>
                     <p>Pour un voyage pensé dans les moindres détails.</p>
                 </div>
                 <div class="services-grid">
-                    <!-- ... Vos 3 services ... -->
+                    <!-- Service 1 -->
+                    <div class="service-card">
+                        <div class="service-icon"><i class="fa-solid fa-plane-departure"></i></div>
+                        <h3>Vols & Transports</h3>
+                        <p>Nous réservons les meilleurs vols et organisons tous vos transferts privés sur place.</p>
+                    </div>
+                    <!-- Service 2 -->
+                    <div class="service-card">
+                        <div class="service-icon"><i class="fa-solid fa-users"></i></div>
+                        <h3>Voyages de Groupe</h3>
+                        <p>Nous concevons des circuits sur mesure pour les familles, amis ou comités d'entreprise.</p>
+                    </div>
+                    <!-- Service 3 -->
+                    <div class="service-card">
+                        <div class="service-icon"><i class="fa-solid fa-hotel"></i></div>
+                        <h3>Hébergement de Luxe</h3>
+                        <p>Séjournez dans des hôtels de prestige et des lieux d'exception négociés pour vous.</p>
+                    </div>
                 </div>
             </div>
         </section>
         
-        <!-- ======== SECTION CRÉATION DE SOUVENIRS ======== -->
+        <!-- ======== NOUVELLE SECTION : CRÉATION DE SOUVENIRS ======== -->
         <section id="memories" class="section-padding">
             <div class="container memories-grid">
                 <div class="memories-text">
                     <h2>Créez des souvenirs qui dureront toute une vie.</h2>
                     <p>
-                        Chaque voyage est une page blanche que nous écrivons avec vous...
+                        Chaque voyage est une page blanche que nous écrivons avec vous. Des paysages grandioses aux rencontres authentiques, notre mission est de transformer votre séjour en une collection de moments précieux et inoubliables.
                     </p>
                     <a href="#journee-a" class="btn-primary">Nos Expériences</a>
                 </div>
                 <div class="memories-images">
                      <div class="airplane-icon"><i class="fas fa-plane"></i></div>
-                    <img src="img/memories-chalet.jpg" alt="Chalet enneigé" class="image-back">
+                    <!-- Mettez vos images de collage ici -->
+                    <img src="img/memories-chalet.jpg" alt="Chalet enneigé dans les montagnes" class="image-back">
                     <img src="img/memories-cascade.jpg" alt="Cascade luxuriante" class="image-front">
                 </div>
             </div>
         </section>
 
         <!-- ======== SECTION "UNE JOURNÉE À..." ======== -->
-         <section id="journee-a" class="section-padding bg-light">
+         <section id="journee-a" class="section-padding">
             <div class="container">
                 <div class="section-title">
                     <h2>Une journée à...</h2>
@@ -95,84 +119,102 @@
                 </div>
                 <div class="destinations-grid">
                     <!-- Destination 1 -->
-                    <a href="unejournéeàtikehau.html" class="destination-link">
-                        <div class="destination-card">
-                            <img src="img/Une Journée à TIKEHAU-20250702/Soir_Tikehau.JPG" alt="Coucher de soleil à Tikehau">
-                            <div class="destination-info">
-                                <h3>Tikehau</h3>
-                                <span>Polynésie Française</span>
-                            </div>
+                    <div class="destination-card">
+                        <a href="unejournéeàtikehau.html" class="destination-link">
+                        <img src="img/Une Journée à TIKEHAU-20250702/Soir_Tikehau.JPG" alt="Coucher de soleil à Tikehau">
+                        <div class="destination-info">
+                            <h3>Tikehau</h3>
+                            <span>Polynésie Française</span>
                         </div>
-                    </a>
+                    </div>
                     <!-- Destination 2 -->
-                    <a href="unejournéeàrangiroa.html" class="destination-link">
-                        <div class="destination-card">
-                            <img src="img/rangiroa.jpg" alt="Lagon de Rangiroa">
-                            <div class="destination-info">
-                                <h3>Rangiroa</h3>
-                                <span>Polynésie Française</span>
-                            </div>
+                    <div class="destination-card">
+                        <a href="unejournéeàrangiroa.html" class="destination-link">
+                        <img src="img/rangiroa.jpg" alt="Lagon de Rangiroa">
+                        <div class="destination-info">
+                            <h3>Rangiroa</h3>
+                            <span>Polynésie Française</span>
                         </div>
-                    </a>
+                    </div>
                     <!-- Destination 3 -->
-                    <a href="unejournéeàfakarava.html" class="destination-link">
-                        <div class="destination-card">
-                            <img src="img/Une Journée à FAKARAVA-20250702/00_Matin_fakarava.JPG" alt="Plage de Fakarava">
-                            <div class="destination-info">
-                                <h3>Fakarava</h3>
-                                <span>Polynésie Française</span>
-                            </div>
+                    <div class="destination-card">
+                        <a href="unejournéeàfakarava.html" class="destination-link">
+                        <img src="img/Une Journée à FAKARAVA-20250702/00_Matin_fakarava.JPG" alt="Plage de Fakarava">
+                        <div class="destination-info">
+                            <h3>Fakarava</h3>
+                            <span>Polynésie Française</span>
                         </div>
-                    </a>
+                    </div>
                     <!-- Destination 4 -->
-                    <a href="unejournéeàtuamotu.html" class="destination-link">
-                        <div class="destination-card">
-                            <img src="img/Une Journée à Tuamotu-20250702/01-La_Passe.JPG" alt="Atoll des Tuamotu">
-                            <div class="destination-info">
-                                <h3>Tuamotu</h3>
-                                <span>Polynésie Française</span>
-                            </div>
+                    <div class="destination-card">
+                        <a href="unejournéeàtikehau.html" class="destination-link">
+                        <img src="img/Une Journée à Tuamotu-20250702/01-La_Passe.JPG" alt="Atoll des Tuamotu">
+                        <div class="destination-info">
+                            <h3>Tuamotu</h3>
+                            <span>Polynésie Française</span>
                         </div>
-                    </a>
+                    </div>
                 </div>
             </div>
         </section>
 
         <!-- ======== SECTION TÉMOIGNAGES ======== -->
-        <section id="temoignages" class="section-padding">
+        <section id="temoignages" class="section-padding bg-light">
             <div class="container">
                 <div class="section-title">
                     <h2>Les Mots de nos Clients</h2>
                     <p>Leur satisfaction est notre plus belle récompense.</p>
                 </div>
                 <div class="testimonials-grid">
-                    <!-- ... Vos 3 témoignages ... -->
+                    <!-- Témoignage 1 -->
+                    <div class="testimonial-card">
+                        <p>"Un voyage inoubliable en Polynésie. L'organisation était parfaite, les hôtels magnifiques et les activités proposées vraiment uniques. Merci à toute l'équipe de Vos Rêves."</p>
+                        <div class="testimonial-author">
+                        <span>Margaret L.</span>
+                        </div>
+                    </div>
+                    <!-- Témoignage 2 -->
+                    <div class="testimonial-card">
+                        <p>"Notre circuit dans l'Ouest Américain a dépassé toutes nos attentes. Les paysages étaient à couper le souffle et le carnet de route était très bien détaillé. Je recommande vivement !"</p>
+                        <div class="testimonial-author">
+                        <span>Jean-Philippe D.</span>
+                        </div>
+                    </div>
+                     <!-- Témoignage 3 -->
+                    <div class="testimonial-card">
+                        <p>"Nous avons confié l'organisation du voyage de notre CE à Vos Rêves et nous avons été enchantés. Le souci du détail et la personnalisation ont fait toute la différence."</p>
+                        <div class="testimonial-author">
+                        <span>Sophie M.</span>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
 
-        <!-- ======== NOUVELLE SECTION : PARTAGEZ VOTRE EXPÉRIENCE ======== -->
-        <section id="partagez" class="section-padding bg-light">
-            <div class="container">
-                <div class="section-title">
-                    <h2>Partagez Votre Expérience</h2>
-                    <p>
-                        De retour de voyage ? Racontez-nous votre plus belle journée et inspirez d'autres voyageurs à vivre leurs propres rêves.
-                    </p>
-                    <a href="mailto:contact@vosreves.fr?subject=Récit de ma journée de rêve" class="btn-primary">Soumettre mon récit</a>
-                </div>
-            </div>
-        </section>
-
-        <!-- ======== SECTION INSPIRATION VOYAGE ======== -->
-        <section id="inspiration" class="section-padding">
+        <!-- ======== NOUVELLE SECTION : INSPIRATION VOYAGE ======== -->
+        <section id="inspiration" class="section-padding bg-light">
             <div class="container">
                 <div class="section-title">
                     <h2>Où souhaitez-vous voyager ?</h2>
                     <p>Laissez-vous inspirer par nos destinations coups de cœur.</p>
                 </div>
                 <div class="inspiration-grid">
-                    <!-- ... Vos 4 images d'inspiration ... -->
+                    <!-- Carte 1 -->
+                    <div class="inspiration-card">
+                        <img src="img/inspiration-village.jpg" alt="Village pittoresque en Europe">
+                    </div>
+                    <!-- Carte 2 -->
+                    <div class="inspiration-card">
+                        <img src="img/inspiration-rizieres.jpg" alt="Rizières en terrasses en Asie">
+                    </div>
+                    <!-- Carte 3 -->
+                    <div class="inspiration-card">
+                        <img src="img/inspiration-montagne.jpg" alt="Randonneur face aux montagnes">
+                    </div>
+                    <!-- Carte 4 -->
+                    <div class="inspiration-card">
+                        <img src="img/inspiration-plage-famille.jpg" alt="Famille marchant sur la plage">
+                    </div>
                 </div>
             </div>
         </section>
@@ -181,8 +223,60 @@
 
     <!-- ======== FOOTER (PIED DE PAGE) ======== -->
     <footer id="contact" class="main-footer">
-        <!-- ... Votre footer complet ... -->
+        <div class="container footer-grid">
+            <!-- Colonne 1: Bordeaux -->
+            <div class="footer-column">
+                <h4>Bordeaux</h4>
+                <p><strong>Adresse :</strong> 10 Cours Alsace et Lorraine</p>
+                <p><strong>Téléphone :</strong> 05 57 12 12 12</p>
+                <p><strong>Horaires :</strong></p>
+                <ul>
+                    <li>Lun: 14h-17h</li>
+                    <li>Mar-Ven: 9h-12h & 14h-18h</li>
+                    <li>Sam: 9h-17h</li>
+                </ul>
+            </div>
+            <!-- Colonne 2: Lyon -->
+            <div class="footer-column">
+                <h4>Lyon</h4>
+                <p><strong>Adresse :</strong> 100 rue de la Part Dieu</p>
+                <p><strong>Téléphone :</strong> 04 78 12 12 12</p>
+                <p><strong>Horaires :</strong></p>
+                <ul>
+                    <li>Mar-Ven: 8h30-12h & 14h-18h</li>
+                    <li>Sam: 9h-18h</li>
+                    <li>Lundi: Fermé</li>
+                </ul>
+            </div>
+            <!-- Colonne 3: Marseille -->
+            <div class="footer-column">
+                <h4>Marseille</h4>
+                <p><strong>Adresse :</strong> 10 Avenue Saint Antoine</p>
+                <p><strong>Téléphone :</strong> 04 91 12 12 12</p>
+                <p><strong>Horaires :</strong></p>
+                <ul>
+                    <li>Mar-Jeu: 8h30-12h & 14h-18h</li>
+                    <li>Ven: 8h30-12h30 & 13h30-18h</li>
+                    <li>Sam: 8h-18h</li>
+                </ul>
+            </div>
+            <!-- Colonne 4: Supports -->
+            <div class="footer-column">
+                <h4>Supports</h4>
+                <p><i class="fas fa-envelope"></i> <a href="mailto:contact@vosreves.fr">contact@vosreves.fr</a></p>
+                <p><i class="fas fa-phone"></i> +01 234 567 890</p>
+                 <div class="footer-socials">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 Vos Rêves. Tous droits réservés.</p>
+        </div>
     </footer>
+
 
     <!-- Lien vers votre fichier JavaScript -->
     <script src="js/script.js"></script>
