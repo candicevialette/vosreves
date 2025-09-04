@@ -3,81 +3,74 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Partagez votre expérience - Vos Rêves</title>
+    <title>Partagez votre expérience - Votre Agence</title>
     <meta name="description" content="Proposez votre propre récit de voyage et partagez votre 'journée à...' avec la communauté de Vos Rêves.">
-    <!-- ... vos autres balises head ... -->
-    <link rel="stylesheet" href="css/style.css">
+    
+    <!-- Lien vers les polices Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Montserrat:wght@600;700&display=swap" rel="stylesheet">
+
+    <!-- ▼▼▼ LIEN VERS VOTRE FEUILLE DE STYLE CSS ▼▼▼ -->
+    <link rel="stylesheet" href="VOTRE_FICHIER.css"> 
+    <!-- ▲▲▲ Assurez-vous que le chemin est correct ! ▲▲▲ -->
+
 </head>
-<body>
-    <header class="main-header"><!-- ... votre header ... --></header>
+<body class="form-page-body">
 
-    <main>
-        <section class="section-padding">
-            <div class="container">
-                <div class="page-header">
-                    <h1>Partagez votre expérience</h1>
-                    <p class="page-intro">Racontez-nous votre histoire. Les plus beaux récits seront publiés sur notre site !</p>
-                </div>
+    <div class="submission-container">
+        <div class="submission-header">
+            <h1>Partagez votre expérience</h1>
+            <p class="page-intro">Racontez-nous votre histoire. Les plus beaux récits seront publiés sur notre site !</p>
+        </div>
 
-                <form id="experience-form" class="submission-form">
-                    <div class="form-group">
-                        <label for="prenom">Votre prénom :</label>
-                        <input type="text" id="prenom" name="prenom" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="initiale_nom">Première lettre de votre nom de famille :</label>
-                        <input type="text" id="initiale_nom" name="initiale_nom" maxlength="1" required>
-                    </div>
-
-                    <!-- ======== NOUVEAU CHAMP EMAIL AJOUTÉ ICI ======== -->
-                    <div class="form-group">
-                        <label for="email">Votre adresse mail :</label>
-                        <input type="email" id="email" name="email" placeholder="exemple@domaine.com" required>
-                        <p class="form-hint" style="margin-top: 5px;">
-                            Nous utiliserons cet e-mail uniquement si votre récit est sélectionné, pour vous demander vos photos et vidéos.
-                        </p>
-                    </div>
-                    <!-- ============================================= -->
-
-                    <div class="form-group">
-                        <label for="destination">Quelle était votre destination ?</label>
-                        <input type="text" id="destination" name="destination" placeholder="Le lieu de votre expérience" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="recit">Le récit de votre journée :</label>
-                        <textarea id="recit" name="recit" rows="10" placeholder="Décrivez votre journée, les lieux visités, vos émotions, vos conseils..." required></textarea>
-                    </div>
-
-                    <div class="form-actions">
-                        <button type="submit" id="submit-btn" class="btn-primary">Envoyer mon expérience</button>
-                    </div>
-                    <p id="form-status"></p>
-                </form>
+        <form id="experience-form">
+            <div class="form-group">
+                <label for="prenom">Votre prénom :</label>
+                <input type="text" id="prenom" name="prenom" required>
             </div>
-        </section>
-    </main>
-
-    <footer id="contact" class="main-footer"><!-- ... votre footer ... --></footer>
+            <div class="form-group">
+                <label for="initiale_nom">Première lettre de votre nom de famille :</label>
+                <input type="text" id="initiale_nom" name="initiale_nom" maxlength="1" required>
+            </div>
+            <div class="form-group">
+                <label for="email">Votre adresse mail :</label>
+                <input type="email" id="email" name="email" placeholder="exemple@domaine.com" required>
+                <p class="form-hint">
+                    Nous utiliserons cet e-mail uniquement si votre récit est sélectionné, pour vous demander vos photos et vidéos.
+                </p>
+            </div>
+            <div class="form-group">
+                <label for="destination">Quelle était votre destination ?</label>
+                <input type="text" id="destination" name="destination" placeholder="Le lieu de votre expérience" required>
+            </div>
+            <div class="form-group">
+                <label for="recit">Le récit de votre journée :</label>
+                <textarea id="recit" name="recit" rows="10" placeholder="Décrivez votre journée, les lieux visités, vos émotions, vos conseils..." required></textarea>
+            </div>
+            <div class="form-actions">
+                <button type="submit" id="submit-btn" class="btn-primary submit-experience">Envoyer mon expérience</button>
+            </div>
+            <p id="form-status"></p>
+        </form>
+    </div>
 
     <script>
+        // Le JavaScript reste ici car il est spécifique à la logique de cette page.
         const form = document.getElementById('experience-form');
         const statusMessage = document.getElementById('form-status');
         const submitButton = document.getElementById('submit-btn');
 
-        // N'OUBLIEZ PAS DE METTRE VOTRE URL DE SCRIPT GOOGLE ICI
         const googleAppScriptUrl = 'VOTRE_URL_DE_SCRIPT_GOOGLE_ICI';
 
         form.addEventListener('submit', event => {
             event.preventDefault();
-
             statusMessage.textContent = 'Envoi en cours...';
-            statusMessage.style.color = '#333';
+            statusMessage.className = 'status-sending';
             submitButton.disabled = true;
 
             const formData = new FormData(form);
             const data = Object.fromEntries(formData.entries());
-
-            // Ajout des données pour la base de données
             data.date_soumission = new Date().toISOString();
             data.etat = "Nouveau";
 
@@ -89,12 +82,12 @@
             })
             .then(response => {
                 statusMessage.textContent = 'Merci ! Votre expérience a bien été envoyée.';
-                statusMessage.style.color = 'green';
+                statusMessage.className = 'status-success';
                 form.reset();
             })
             .catch(error => {
                 statusMessage.textContent = 'Erreur lors de l\'envoi. Veuillez réessayer plus tard.';
-                statusMessage.style.color = 'red';
+                statusMessage.className = 'status-error';
             })
             .finally(() => {
                 submitButton.disabled = false;
