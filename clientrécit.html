@@ -10,7 +10,6 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
-    <!-- Le CSS de Swiper n'est pas utilisé ici, mais on le garde pour la cohérence du template -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
     <link rel="stylesheet" href="css/style.css">
 </head>
@@ -33,43 +32,43 @@
                 <div class="page-header">
                     <h1>Partagez votre expérience</h1>
                     <p class="page-intro">
-                        Vous aussi, vous avez vécu une journée inoubliable que vous souhaitez partager ? Racontez-nous votre histoire. Les plus beaux récits seront publiés sur notre site !
+                        Vous aussi, vous avez vécu une journée inoubliable que vous souhaitez partager ? Racontez-nous votre histoire et envoyez-nous vos plus belles photos. Les plus beaux récits seront publiés sur notre site !
                     </p>
                 </div>
 
-                <!-- 
-                  FORMULAIRE CONFIGURÉ POUR GITHUB PAGES AVEC FORMSPREE
-                  Remplacez "VOTRE_CODE_UNIQUE" ci-dessous par le code fourni par Formspree.
-                -->
-                <form action="https://formspree.io/f/VOTRE_CODE_UNIQUE" method="POST" class="submission-form">
+                <!-- Formulaire de soumission -->
+                <form action="#" method="POST" enctype="multipart/form-data" class="submission-form">
                     
                     <div class="form-group">
                         <label for="prenom">Votre prénom :</label>
-                        <input type="text" id="prenom" name="Prénom" required>
+                        <input type="text" id="prenom" name="prenom" required>
                     </div>
 
                     <div class="form-group">
                         <label for="nom-initial">Première lettre de votre nom de famille :</label>
-                        <input type="text" id="nom-initial" name="Initiale Nom" maxlength="1" required>
+                        <input type="text" id="nom-initial" name="nom-initial" maxlength="1" required>
                     </div>
 
                     <div class="form-group">
                         <label for="destination">Quelle était votre destination ? (Ex: Tikehau, Rangiroa)</label>
-                        <input type="text" id="destination" name="Destination" placeholder="Le lieu de votre expérience" required>
+                        <input type="text" id="destination" name="destination" placeholder="Le lieu de votre expérience" required>
                     </div>
 
                     <div class="form-group">
                         <label for="recit">Le récit de votre journée :</label>
-                        <textarea id="recit" name="Récit" rows="15" placeholder="Décrivez votre journée, les lieux visités, vos émotions, vos conseils..." required></textarea>
+                        <textarea id="recit" name="recit" rows="15" placeholder="Décrivez votre journée, les lieux visités, vos émotions, vos conseils..." required></textarea>
                     </div>
-                    
-                    <!-- Information sur les fichiers -->
-                    <div class="form-group file-info">
-                        <h4>Concernant les photos et vidéos</h4>
-                        <p class="form-hint">
-                            L'envoi de fichiers n'est pas supporté directement par ce formulaire. 
-                            <strong>Si votre récit est sélectionné, nous vous contacterons par e-mail</strong> pour récupérer vos magnifiques photos et vidéos !
-                        </p>
+
+                    <div class="form-group">
+                        <label for="photos">Vos photos (entre 2 et 30) :</label>
+                        <input type="file" id="photos" name="photos[]" multiple accept="image/jpeg, image/png, image/gif">
+                        <p class="form-hint">Formats acceptés : JPG, PNG, GIF. Maintenez la touche Ctrl (ou Cmd sur Mac) pour sélectionner plusieurs fichiers.</p>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="video">Votre vidéo (optionnel) :</label>
+                        <input type="file" id="video" name="video" accept="video/mp4, video/webm">
+                         <p class="form-hint">Formats recommandés : MP4, WebM. Taille maximale : 50MB.</p>
                     </div>
 
                     <button type="submit" class="btn-primary">Envoyer mon expérience</button>
@@ -124,7 +123,8 @@
             </div>
         </div>
    </footer>
-    
+    <!-- Le script swiper n'est pas nécessaire sur cette page, mais on peut le laisser pour la cohérence -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <script src="js/script.js"></script>
 </body>
 </html>
