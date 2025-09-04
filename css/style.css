@@ -542,3 +542,32 @@ textarea {
     min-height: 100vh;     /* Fait en sorte que la page prenne au moins toute la hauteur de l'écran */
     margin: 0; /* Supprime la marge par défaut du body */
 }
+/* ============================================= */
+/* ==       STYLE POUR LE BOUTON RETOUR       == */
+/* ============================================= */
+
+.back-link {
+    display: inline-flex;
+    align-items: center;
+    text-decoration: none;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 600;
+    font-size: 1.1em;
+    color: #34495e; /* Couleur du texte gris foncé */
+    margin-bottom: 30px; /* Espace avant le titre du formulaire */
+    transition: color 0.3s ease-in-out;
+}
+
+/* --- Création de la flèche orange --- */
+.back-link::before {
+    content: '←'; /* Caractère flèche */
+    color: #F5A623; /* Couleur orange du thème */
+    font-size: 1.4em; /* Rend la flèche un peu plus grande */
+    margin-right: 10px; /* Espace entre la flèche et le texte */
+    font-weight: bold;
+}
+
+/* --- Effet au survol --- */
+.back-link:hover {
+    color: #F5A623; /* Le texte devient orange au survol */
+}
