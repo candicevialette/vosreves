@@ -1,85 +1,235 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-  <meta charset="UTF-8">
-  <title>Exo1</title>
-  <style>
-    /* Style commun pour toutes les zones */
-    .zone {
-      border: 2px solid #333;
-      margin: 10px;
-      padding: 10px;
-    }
-    /* Styles spécifiques pour distinguer visuellement chaque zone */
-    header {
-      background-color: #f0f0f0;
-    }
-    nav {
-      background-color: #d0f0d0;
-    }
-    article {
-      background-color: #f0d0d0;
-    }
-    aside {
-      background-color: #d0d0f0;
-    }
-    footer {
-      background-color: #f0f0d0;
-    }
-    /* Mise en page pour la zone principale (article + aside) */
-    .conteneur-principal {
-      display: flex;
-    }
-    .conteneur-principal article {
-      flex: 3;
-      margin-right: 10px;
-    }
-    .conteneur-principal aside {
-      flex: 1;
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vos Rêves - Agence de Voyages de Luxe</title>
+    <meta name="description" content="Offrez à vos rêves le voyage qu'ils méritent. Voyages de luxe sur mesure.">
+
+    <!-- Police depuis Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap" rel="stylesheet">
+    
+    <!-- Icônes depuis Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+    <!-- Lien vers votre feuille de style CSS -->
+    <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-   <a href="https://candicevialette.github.io/html/public_html/TP05/presentation.html" style="color: inherit; text-decoration: none; font-weight: bold; cursor: pointer;">
-    TP05</a>  
-  <!-- En-tête du site : balise <header> -->
-  <header class="zone">
-    <h1>En-tête du site</h1>
-    <!-- Contient le logo, le titre, etc. -->
-  </header>
-  
-  <!-- Zone de navigation : balise <nav> -->
-  <nav class="zone">
-    <ul>
-      <li><a href="https://candicevialette.github.io/html/public_html/TP03/index.html">Lien 1 (mémory)</a></li>
-      <li><a href="https://candicevialette.github.io/html/public_html/TP01/TP01_Exo3.html">Lien 2 (cv)</a></li>
-      <li><a href="https://candicevialette.github.io/html/public_html/TP04bis/presentation.html">Lien 3 (TP04)</a></li>
-    </ul>
-  </nav>
-  
-  <!-- Conteneur principal regroupant l'article et la barre latérale -->
-  <div class="zone conteneur-principal">
-    <!-- Article principal : balise <article> -->
-    <article class="zone">
-      <h2>Article Principal</h2>
-      <p>Contenu principal de la page.</p>
-      <!-- Architecture du site :
-           - Cette zone représente le contenu central avec la hiérarchie des pages et sections.
-           - Ici, on peut détailler l'organisation interne du site.
-           La balise utilisée ici est <article>.
-      -->
-    </article>
-    
-    <!-- Barre latérale : balise <aside> -->
-    <aside class="zone">
-      <h3>Barre latérale</h3>
-      <p>Contenu complémentaire (liens, infos, etc.).</p>
-    </aside>
-  </div>
-  
-  <!-- Pied de page : balise <footer> -->
-  <footer class="zone">
-    <p>Pied de page - informations de contact, copyright, etc.</p>
-  </footer>
+
+    <!-- ======== HEADER (EN-TÊTE) ======== -->
+    <header class="main-header">
+        <div class="container">
+            <nav class="main-nav">
+                <a href="index.html" class="logo">
+                    <!-- Mettez votre logo ici -->
+                    <img src="img/logo-vos-reves.png" alt="Logo Vos Rêves">
+                </a>
+                <ul class="nav-links">
+                    <!-- Ajoutez d'autres liens de menu ici si besoin -->
+                </ul>
+                <a href="#contact" class="btn-primary">Contactez-nous</a>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <!-- ======== SECTION HERO (IMAGE PRINCIPALE) ======== -->
+        <section class="hero">
+            <div class="hero-content">
+                <p>Vos Rêves, Notre Destination !</p>
+                <h1>Offrez à vos rêves le voyage qu'ils méritent.</h1>
+            </div>
+        </section>
+
+        <!-- ======== SECTION PRÉSENTATION ======== -->
+        <section id="presentation" class="section-padding">
+            <div class="container presentation-grid">
+                <div class="presentation-image">
+                    <!-- Mettez la photo du directeur ici -->
+                    <img src="img/directeur-latour.jpg" alt="M. Latour, fondateur de Vos Rêves">
+                </div>
+                <div class="presentation-text">
+                    <h2>Présentation de l'entreprise :</h2>
+                    <p>
+                        Depuis 1999, Vos Rêves organise des voyages de luxe clé en main, spécialisés en séjours haut de gamme en Amérique du Nord et en Polynésie Française. Grâce à l'expérience de son fondateur, M. Latour, et à ses agences à Paris, Bordeaux, Lyon et Marseille, l'entreprise propose des séjours personnalisés adaptés à chaque client. Reconnue pour son expertise et son service de qualité, Vos Rêves transforme chaque voyage en une expérience unique.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- ======== SECTION SERVICES ======== -->
+        <section id="services" class="section-padding bg-light">
+            <div class="container">
+                <div class="section-title">
+                    <!-- Titre modifiable -->
+                    <h2>Nos Services Exclusifs</h2>
+                    <p>Pour un voyage pensé dans les moindres détails.</p>
+                </div>
+                <div class="services-grid">
+                    <!-- Service 1 -->
+                    <div class="service-card">
+                        <div class="service-icon"><i class="fa-solid fa-plane-departure"></i></div>
+                        <h3>Vols & Transports</h3>
+                        <p>Nous réservons les meilleurs vols et organisons tous vos transferts privés sur place.</p>
+                    </div>
+                    <!-- Service 2 -->
+                    <div class="service-card">
+                        <div class="service-icon"><i class="fa-solid fa-users"></i></div>
+                        <h3>Voyages de Groupe</h3>
+                        <p>Nous concevons des circuits sur mesure pour les familles, amis ou comités d'entreprise.</p>
+                    </div>
+                    <!-- Service 3 -->
+                    <div class="service-card">
+                        <div class="service-icon"><i class="fa-solid fa-hotel"></i></div>
+                        <h3>Hébergement de Luxe</h3>
+                        <p>Séjournez dans des hôtels de prestige et des lieux d'exception négociés pour vous.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- ======== SECTION "UNE JOURNÉE À..." ======== -->
+        <section id="journee-a" class="section-padding">
+            <div class="container">
+                <div class="section-title">
+                    <h2>Une journée à...</h2>
+                    <p>Découvrez les expériences uniques vécues par nos clients.</p>
+                </div>
+                <div class="destinations-grid">
+                    <!-- Destination 1 -->
+                    <div class="destination-card">
+                        <img src="img/tikehau.jpg" alt="Coucher de soleil à Tikehau">
+                        <div class="destination-info">
+                            <h3>Tikehau</h3>
+                            <span>Polynésie Française</span>
+                        </div>
+                    </div>
+                    <!-- Destination 2 -->
+                    <div class="destination-card">
+                        <img src="img/rangiroa.jpg" alt="Lagon de Rangiroa">
+                        <div class="destination-info">
+                            <h3>Rangiroa</h3>
+                            <span>Polynésie Française</span>
+                        </div>
+                    </div>
+                    <!-- Destination 3 -->
+                    <div class="destination-card">
+                        <img src="img/fakarava.jpg" alt="Plage de Fakarava">
+                        <div class="destination-info">
+                            <h3>Fakarava</h3>
+                            <span>Polynésie Française</span>
+                        </div>
+                    </div>
+                    <!-- Destination 4 -->
+                    <div class="destination-card">
+                        <img src="img/tuamotu.jpg" alt="Atoll des Tuamotu">
+                        <div class="destination-info">
+                            <h3>Tuamotu</h3>
+                            <span>Polynésie Française</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ======== SECTION TÉMOIGNAGES ======== -->
+        <section id="temoignages" class="section-padding bg-light">
+            <div class="container">
+                <div class="section-title">
+                    <h2>Les Mots de nos Clients</h2>
+                    <p>Leur satisfaction est notre plus belle récompense.</p>
+                </div>
+                <div class="testimonials-grid">
+                    <!-- Témoignage 1 -->
+                    <div class="testimonial-card">
+                        <p>"Un voyage inoubliable en Polynésie. L'organisation était parfaite, les hôtels magnifiques et les activités proposées vraiment uniques. Merci à toute l'équipe de Vos Rêves."</p>
+                        <div class="testimonial-author">
+                            <img src="img/client-1.jpg" alt="Cliente satisfaite">
+                            <span>Margaret L.</span>
+                        </div>
+                    </div>
+                    <!-- Témoignage 2 -->
+                    <div class="testimonial-card">
+                        <p>"Notre circuit dans l'Ouest Américain a dépassé toutes nos attentes. Les paysages étaient à couper le souffle et le carnet de route était très bien détaillé. Je recommande vivement !"</p>
+                        <div class="testimonial-author">
+                            <img src="img/client-2.jpg" alt="Client satisfait">
+                            <span>Jean-Philippe D.</span>
+                        </div>
+                    </div>
+                     <!-- Témoignage 3 -->
+                    <div class="testimonial-card">
+                        <p>"Nous avons confié l'organisation du voyage de notre CE à Vos Rêves et nous avons été enchantés. Le souci du détail et la personnalisation ont fait toute la différence."</p>
+                        <div class="testimonial-author">
+                            <img src="img/client-3.jpg" alt="Cliente satisfaite">
+                            <span>Sophie M.</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- ======== FOOTER (PIED DE PAGE) ======== -->
+    <footer id="contact" class="main-footer">
+        <div class="container footer-grid">
+            <!-- Colonne 1: Bordeaux -->
+            <div class="footer-column">
+                <h4>Bordeaux</h4>
+                <p><strong>Adresse :</strong> 10 Cours Alsace et Lorraine</p>
+                <p><strong>Téléphone :</strong> 05 57 12 12 12</p>
+                <p><strong>Horaires :</strong></p>
+                <ul>
+                    <li>Lun: 14h-17h</li>
+                    <li>Mar-Ven: 9h-12h & 14h-18h</li>
+                    <li>Sam: 9h-17h</li>
+                </ul>
+            </div>
+            <!-- Colonne 2: Lyon -->
+            <div class="footer-column">
+                <h4>Lyon</h4>
+                <p><strong>Adresse :</strong> 100 rue de la Part Dieu</p>
+                <p><strong>Téléphone :</strong> 04 78 12 12 12</p>
+                <p><strong>Horaires :</strong></p>
+                <ul>
+                    <li>Mar-Ven: 8h30-12h & 14h-18h</li>
+                    <li>Sam: 9h-18h</li>
+                    <li>Lundi: Fermé</li>
+                </ul>
+            </div>
+            <!-- Colonne 3: Marseille -->
+            <div class="footer-column">
+                <h4>Marseille</h4>
+                <p><strong>Adresse :</strong> 10 Avenue Saint Antoine</p>
+                <p><strong>Téléphone :</strong> 04 91 12 12 12</p>
+                <p><strong>Horaires :</strong></p>
+                <ul>
+                    <li>Mar-Jeu: 8h30-12h & 14h-18h</li>
+                    <li>Ven: 8h30-12h30 & 13h30-18h</li>
+                    <li>Sam: 8h-18h</li>
+                </ul>
+            </div>
+            <!-- Colonne 4: Supports -->
+            <div class="footer-column">
+                <h4>Supports</h4>
+                <p><i class="fas fa-envelope"></i> <a href="mailto:contact@vosreves.fr">contact@vosreves.fr</a></p>
+                <p><i class="fas fa-phone"></i> +01 234 567 890</p>
+                 <div class="footer-socials">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 Vos Rêves. Tous droits réservés.</p>
+        </div>
+    </footer>
+
+    <!-- Lien vers votre fichier JavaScript -->
+    <script src="js/script.js"></script>
 </body>
 </html>
