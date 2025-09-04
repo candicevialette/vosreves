@@ -172,3 +172,68 @@ h2 { font-size: 2.5rem; }
 .btn-back:hover {
     color: var(--primary-color);
 }
+/* =================================
+   Styles pour la page de soumission
+   ================================= */
+.page-header {
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.page-intro {
+    font-size: 1.1rem;
+    max-width: 800px;
+    margin: 1rem auto 0;
+    line-height: 1.7;
+}
+
+.submission-form {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: 500;
+    color: #333;
+}
+
+.form-group input[type="text"],
+.form-group textarea {
+    width: 100%;
+    padding: 0.8rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-family: 'Poppins', sans-serif;
+    font-size: 1rem;
+    box-sizing: border-box; /* Assure que le padding n'augmente pas la largeur */
+}
+
+.form-group textarea {
+    resize: vertical; /* Permet à l'utilisateur de redimensionner verticalement */
+}
+
+.form-group input[type="file"] {
+    font-size: 0.9rem;
+}
+
+.form-hint {
+    font-size: 0.85rem;
+    color: #666;
+    margin-top: 0.5rem;
+}
+
+/* Style pour le bouton d'envoi */
+.submission-form .btn-primary {
+    display: inline-block;
+    width: auto;
+    border: none;
+    cursor: pointer;
+    padding: 1rem 2.5rem;
+    font-size: 1.1rem;
+}
