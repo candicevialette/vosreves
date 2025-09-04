@@ -2,93 +2,129 @@
 /*          RÉGLAGES GLOBAUX & VARIABLES             */
 /* ================================================= */
 :root {
-    --primary-color: #f39c12; /* L'orange/doré de votre design */
-    --dark-color: #000000;    /* Le noir pur du footer */
-    --text-color: #333;       /* Couleur du texte principal */
-    --light-gray-bg: #f9f9f9; /* Couleur de fond des sections claires */
+    --primary-color: #f39c12;
+    --dark-color: #000000;
+    --text-color: #333;
+    --light-gray-bg: #f9f9f9;
     --font-family: 'Poppins', sans-serif;
 }
 
-/* ... (Le début du CSS reste identique) ... */
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body { font-family: var(--font-family); color: var(--text-color); line-height: 1.7; }
+.container { max-width: 1100px; margin: 0 auto; padding: 0 20px; }
+.section-padding { padding: 80px 0; }
+.bg-light { background-color: var(--light-gray-bg); }
+h1, h2, h3 { line-height: 1.2; margin-bottom: 20px; }
+h1 { font-size: 3.5rem; }
+h2 { font-size: 2.5rem; }
+.section-title { text-align: center; margin-bottom: 60px; }
+.section-title h2 { color: var(--text-color); }
+.section-title p { font-size: 1.1rem; color: #666; }
 
 /* ================================================= */
-/*       SECTION CRÉATION DE SOUVENIRS               */
+/*                     HEADER & NAV                  */
 /* ================================================= */
-/* ... (Le CSS existant reste identique) ... */
-
+.main-header { position: absolute; top: 0; left: 0; width: 100%; z-index: 100; padding: 20px 0; }
+.main-nav { display: flex; justify-content: space-between; align-items: center; }
+.logo img { height: 40px; }
+.btn-primary { background-color: var(--primary-color); color: white; padding: 12px 25px; border-radius: 50px; text-decoration: none; font-weight: 500; transition: background-color 0.3s ease; }
+.btn-primary:hover { background-color: #e67e22; }
 
 /* ================================================= */
-/*      SECTION "UNE JOURNÉE À..." --- CORRIGÉE      */
+/*                     SECTION HERO                  */
 /* ================================================= */
-.destinations-grid {
-    display: grid;
-    /* Mise en page sur 2 colonnes pour un meilleur équilibre */
-    grid-template-columns: repeat(2, 1fr);
-    gap: 30px; /* Un peu plus d'espace */
-}
+.hero { height: 100vh; background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('../img/hero-palmier.jpg') no-repeat center center/cover; display: flex; justify-content: center; align-items: center; text-align: center; color: white; }
+.hero-content { max-width: 800px; }
+.hero-content p { font-size: 1.2rem; font-weight: 500; }
 
-/* On s'assure que la carte garde un ratio carré et gère bien l'image */
-.destination-card {
-    position: relative;
-    border-radius: 15px;
-    overflow: hidden; 
-    cursor: pointer;
-    color: white;
-    aspect-ratio: 4 / 3; /* Ratio pour un format paysage agréable */
-}
+/* ================================================= */
+/*                 AUTRES SECTIONS...                */
+/* ================================================= */
+.presentation-grid, .memories-grid { display: grid; grid-template-columns: 1fr 1.5fr; gap: 60px; align-items: center; }
+.presentation-image img { width: 100%; border-radius: 10px; }
+.services-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px; }
+.service-card { background: white; padding: 40px; border-radius: 10px; text-align: center; box-shadow: 0 5px 15px rgba(0,0,0,0.05); }
+.service-icon { width: 70px; height: 70px; margin: 0 auto 20px; background-color: var(--primary-color); color: white; border-radius: 50%; display: flex; justify-content: center; align-items: center; font-size: 1.8rem; }
+.memories-images { position: relative; min-height: 400px; }
+.memories-images img { width: 80%; border-radius: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.1); position: absolute; }
+.memories-images .image-back { top: 0; left: 0; transform: rotate(-8deg); }
+.memories-images .image-front { bottom: 0; right: 0; z-index: 2; transform: rotate(6deg); }
+.airplane-icon { position: absolute; top: -20px; right: 50px; font-size: 2rem; color: var(--text-color); transform: rotate(20deg); opacity: 0.7; }
+.testimonials-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px; }
+.testimonial-card { background: white; padding: 30px; border-radius: 10px; box-shadow: 0 5px 15px rgba(0,0,0,0.05); }
+.testimonial-author { margin-top: 20px; }
+.testimonial-author span { font-weight: bold; }
+.inspiration-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; }
+.inspiration-card { border-radius: 15px; overflow: hidden; cursor: pointer; }
+.inspiration-card img { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform 0.4s ease-out; }
+.inspiration-card:hover img { transform: scale(1.1); }
 
-.destination-card img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    display: block;
-    transition: transform 0.4s ease-out; 
-}
-
+/* ================================================= */
+/*      SECTION "UNE JOURNÉE À..." (CORRIGÉE)      */
+/* ================================================= */
+.destinations-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 30px; }
+.destination-card { position: relative; border-radius: 15px; overflow: hidden; cursor: pointer; color: white; aspect-ratio: 4 / 3; }
+.destination-card img { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform 0.4s ease-out; }
 .destination-card:hover img { transform: scale(1.1); }
-
-.destination-info {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    padding: 20px;
-    background: linear-gradient(to top, rgba(0,0,0,0.8), transparent);
-}
-
-/* CORRECTION : On force le texte à être blanc, même dans un lien */
-.destination-link,
-.destination-link h3,
-.destination-link span {
-    color: white;
-    text-decoration: none;
-}
-
+.destination-info { position: absolute; bottom: 0; left: 0; width: 100%; padding: 20px; background: linear-gradient(to top, rgba(0,0,0,0.8), transparent); }
+.destination-link, .destination-link h3, .destination-link span { color: white; text-decoration: none; }
 .destination-info h3 { margin-bottom: 5px; }
 .destination-info span { font-size: 0.9rem; }
 
+/* ================================================= */
+/*      SECTION PARTAGEZ VOTRE EXPÉRIENCE          */
+/* ================================================= */
+#partagez .section-title p { max-width: 600px; margin-left: auto; margin-right: auto; }
+#partagez .btn-primary { margin-top: 20px; }
 
 /* ================================================= */
-/*                   SECTION TÉMOIGNAGES             */
+/*                       FOOTER                      */
 /* ================================================= */
-/* ... (Le CSS existant reste identique) ... */
+.main-footer { background-color: var(--dark-color); color: #cccccc; padding: 60px 0 0; }
+.footer-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 40px; margin-bottom: 40px; }
+.footer-column h4 { color: var(--primary-color); margin-bottom: 20px; font-size: 1rem; font-weight: bold; }
+.footer-column p, .footer-column li { font-size: 0.9rem; margin-bottom: 10px; color: #cccccc; }
+.footer-column p strong { color: var(--primary-color); font-weight: 500; }
+.footer-column ul { list-style: none; padding: 0; }
+.footer-column a { color: #cccccc; text-decoration: none; transition: color 0.3s ease; }
+.footer-column a:hover { color: white; }
+.footer-socials { margin-top: 20px; }
+.footer-socials a { color: #cccccc; font-size: 1.2rem; margin-right: 15px; }
+.footer-socials a:hover { color: var(--primary-color); }
+.footer-bottom { border-top: 1px solid #333; text-align: center; padding: 20px 0; font-size: 0.9rem; color: #777; }
 
+/* ================================================= */
+/*      STYLES PAGE ARTICLE (MISE EN PAGE ESTHÉTIQUE) */
+/* ================================================= */
+.article-hero { min-height: 50vh; background-size: cover; background-position: center; display: flex; justify-content: center; align-items: center; text-align: center; color: white; position: relative; }
+.article-hero::before { content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(0,0,0,0.5); }
+.article-body { max-width: 750px; margin: 0 auto; font-size: 1.1rem; color: #333; }
+.article-body h2 { font-size: 2.5rem; color: var(--text-color); }
+.article-body h3 { font-size: 1.8rem; margin-top: 2rem; color: var(--text-color); }
+.article-intro { font-size: 1.2rem; font-style: italic; color: #555; margin-bottom: 2rem; border-left: 3px solid var(--primary-color); padding-left: 20px; }
+.article-body p { margin-bottom: 1.5rem; }
+.article-body blockquote { margin: 2rem 0; padding-left: 2rem; border-left: 4px solid var(--primary-color); font-size: 1.3rem; font-style: italic; color: #555; }
+.gallery-container { padding-top: 0; padding-bottom: 0; }
+.swiper { width: 100%; max-width: 900px; margin: 0 auto; border-radius: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.15); }
+.swiper-slide img { width: 100%; height: 100%; object-fit: cover; }
+:root { --swiper-navigation-color: white; --swiper-pagination-color: white; }
+.swiper-button-next, .swiper-button-prev { filter: drop-shadow(0 0 5px rgba(0,0,0,0.5)); }
+.video-container { margin-top: 1.5rem; border-radius: 15px; overflow: hidden; box-shadow: 0 10px 30px rgba(0,0,0,0.15); }
+.video-container video { width: 100%; display: block; }
 
 /* ================================================= */
-/*      NOUVEAU : SECTION PARTAGEZ VOTRE EXPÉRIENCE  */
+/*                 RESPONSIVE DESIGN                 */
 /* ================================================= */
-#partagez .section-title p {
-    max-width: 600px; /* Limite la largeur du texte pour une meilleure lisibilité */
-    margin-left: auto;
-    margin-right: auto;
+@media (max-width: 992px) { .footer-grid { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 768px) {
+    h1 { font-size: 2.5rem; }
+    h2 { font-size: 2rem; }
+    .presentation-grid, .services-grid, .testimonials-grid, .memories-grid { grid-template-columns: 1fr; }
+    .memories-text { text-align: center; }
+    .memories-images { margin-top: 40px; min-height: 350px; }
+    .destinations-grid, .inspiration-grid { grid-template-columns: repeat(2, 1fr); }
+    .main-nav { flex-direction: column; }
+    .main-nav .logo { margin-bottom: 20px; }
 }
-
-#partagez .btn-primary {
-    margin-top: 20px; /* Espace entre le texte et le bouton */
-}
-
-
-/* ================================================= */
-/*            SECTION INSPIRATION                    */
-/* ================================================= */
-/* ... (Le reste du CSS reste identique) ... */
+@media (max-width: 576px) { .destinations-grid, .inspiration-grid, .footer-grid { grid-template-columns: 1fr; } }
