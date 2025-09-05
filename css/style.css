@@ -610,7 +610,7 @@ textarea {
     position: relative;
     width: 100%;
     padding-top: 56.25%; /* Ratio 16:9 pour le conteneur */
-    background-image: url('../img/world-map.png'); /* VOTRE IMAGE DE CARTE */
+    background-image: url('img/cartemonde.png'); /* VOTRE IMAGE DE CARTE */
     background-size: contain;
     background-repeat: no-repeat;
     background-position: center;
