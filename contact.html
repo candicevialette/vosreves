@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Demande d'informations - Vos Rêves</title>
-    <meta name="description" content="Contactez l'agence Vos Rêves pour obtenir des informations sur votre projet de voyage.">
+    <title>Partagez votre expérience - Vos Rêves</title>
+    <meta name="description" content="Proposez votre propre récit de voyage et partagez votre 'journée à...' avec la communauté de Vos Rêves.">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -29,77 +29,43 @@
         <section class="section-padding">
             <div class="container">
                 <div class="page-header">
-                    <h1>Formulaire de Demande d'Informations</h1>
+                    <h1>Partagez votre expérience</h1>
                     <p class="page-intro">
-                        Décrivez-nous votre projet de vacances et nous reviendrons vers vous sous 8 jours avec des propositions adaptées.
+                        Racontez-nous votre histoire. Les plus beaux récits seront publiés sur notre site !
                     </p>
                 </div>
 
-                <form id="info-form" class="submission-form">
-                    <!-- Section Identité -->
-                    <div class="form-row">
-                        <div class="form-group">
-                            <label for="nom">Nom :</label>
-                            <input type="text" id="nom" name="nom" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="prenom">Prénom :</label>
-                            <input type="text" id="prenom" name="prenom" required>
-                        </div>
+                <!-- Le formulaire utilise maintenant la classe "submission-form" pour adopter le style -->
+                <form id="experience-form" class="submission-form">
+                    
+                    <!-- L'ordre des champs est conservé en vertical -->
+                    <div class="form-group">
+                        <label for="prenom">Votre prénom :</label>
+                        <input type="text" id="prenom" name="prenom" required>
                     </div>
                     <div class="form-group">
-                        <label for="email">Adresse mail (*) :</label>
-                        <input type="email" id="email" name="email" required>
+                        <label for="initiale_nom">Première lettre de votre nom de famille :</label>
+                        <input type="text" id="initiale_nom" name="initiale_nom" maxlength="1" required>
                     </div>
-
-                    <!-- Section Projet -->
                     <div class="form-group">
-                        <label for="projet">Descriptif de votre projet (*) :</label>
-                        <textarea id="projet" name="projet" rows="8" placeholder="Ex: Voyage en famille, lune de miel, centres d'intérêt..." required></textarea>
+                        <label for="email">Votre adresse mail :</label>
+                        <input type="email" id="email" name="email" placeholder="exemple@domaine.com" required>
+                        <p class="form-hint" style="margin-top: 5px;">
+                            Nous utiliserons cet e-mail uniquement si votre récit est sélectionné.
+                        </p>
                     </div>
-                    <div class="form-row">
-                        <div class="form-group">
-                            <label for="date_depart">Date de départ approximative :</label>
-                            <input type="date" id="date_depart" name="date_depart">
-                        </div>
-                        <div class="form-group">
-                            <label for="duree">Durée envisagée en jours :</label>
-                            <input type="number" id="duree" name="duree" min="1">
-                        </div>
+                    <div class="form-group">
+                        <label for="destination">Quelle était votre destination ?</label>
+                        <input type="text" id="destination" name="destination" placeholder="Le lieu de votre expérience" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="recit">Le récit de votre journée :</label>
+                        <textarea id="recit" name="recit" rows="8" placeholder="Décrivez votre journée, les lieux visités, vos émotions..." required></textarea>
                     </div>
 
-                    <!-- Section Choix -->
-                    <fieldset class="form-group">
-                        <legend>Zone géographique :</legend>
-                        <div class="radio-group">
-                            <label><input type="radio" name="zone" value="Polynesie"> Polynésie</label>
-                            <label><input type="radio" name="zone" value="Amerique du nord"> Amérique du nord</label>
-                            <label><input type="radio" name="zone" value="Europe"> Europe</label>
-                        </div>
-                    </fieldset>
-
-                    <fieldset class="form-group">
-                        <legend>Type d'informations désirées :</legend>
-                        <div class="checkbox-group">
-                            <label><input type="checkbox" name="infos" value="Transport"> Transport (vol, ...)</label>
-                            <label><input type="checkbox" name="infos" value="Hebergement"> Hébergement (hôtel, pension, ...)</label>
-                            <label><input type="checkbox" name="infos" value="Excursion"> Excursion</label>
-                        </div>
-                    </fieldset>
-
-                    <!-- Section Agence -->
-                    <fieldset class="form-group">
-                        <legend>Veuillez indiquer l'agence qui prendra en charge votre demande (*) :</legend>
-                        <div class="radio-group">
-                            <label><input type="radio" name="agence" value="Bordeaux" required> Bordeaux</label>
-                            <label><input type="radio" name="agence" value="Lyon"> Lyon</label>
-                            <label><input type="radio" name="agence" value="Marseille"> Marseille</label>
-                        </div>
-                    </fieldset>
-
-                    <!-- Boutons et message de statut -->
+                    <!-- La structure des boutons est identique à l'autre formulaire pour une cohérence parfaite -->
                     <div class="form-actions">
-                        <button type="submit" id="submit-btn" class="btn-primary">Soumettre</button>
+                        <button type="submit" id="submit-btn" class="btn-primary">Envoyer mon expérience</button>
                         <button type="reset" class="btn-secondary">Annuler</button>
                     </div>
                     <p id="form-status"></p>
@@ -109,7 +75,7 @@
     </main>
 
     <footer id="contact" class="main-footer">
-        <div class="container footer-grid">
+         <div class="container footer-grid">
             <div class="footer-column">
                 <h4>Bordeaux</h4>
                 <p><strong>Adresse :</strong> 10 Cours Alsace et Lorraine</p>
@@ -156,50 +122,40 @@
         </div>
     </footer>
 
-
-    <!-- Le JavaScript qui fera fonctionner le formulaire se trouvera ici -->
-     <script>
-        const form = document.getElementById('info-form');
+    <!-- Le JavaScript reste inchangé, il gère la logique d'envoi -->
+    <script>
+        const form = document.getElementById('experience-form');
         const statusMessage = document.getElementById('form-status');
         const submitButton = document.getElementById('submit-btn');
 
-        // COLLEZ L'URL DE VOTRE APPLICATION WEB GOOGLE ICI
-        const googleAppScriptUrl = 'https://script.google.com/macros/s/AKfycby3em_z_lPlykqCff8h276QFUCIpPaZL57Keyst13v3D92GlnLZMo997morhKLYbbN4ZA/exec';
+        // N'OUBLIEZ PAS DE COLLER VOTRE URL DE SCRIPT GOOGLE DÉDIÉ À CE FORMULAIRE ICI
+        const googleAppScriptUrl = 'VOTRE_URL_DE_SCRIPT_POUR_LES_RECITS_ICI';
 
         form.addEventListener('submit', event => {
             event.preventDefault();
-
             statusMessage.textContent = 'Envoi en cours...';
             statusMessage.style.color = '#333';
             submitButton.disabled = true;
 
             const formData = new FormData(form);
             const data = Object.fromEntries(formData.entries());
-
-            // Gérer les checkboxes pour les envoyer comme une liste
-            data.infos = formData.getAll('infos');
-
-            // Ajout des données requises par le professeur
-            data.date_creation = new Date().toISOString();
+            data.date_soumission = new Date().toISOString();
             data.etat = "Nouveau";
 
             fetch(googleAppScriptUrl, {
                 method: 'POST',
-                mode: 'no-cors', // Important pour ce type de requête
-                headers: {
-                    'Content-Type': 'application/json',
-                },
+                mode: 'no-cors',
+                headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify(data)
             })
             .then(response => {
-                statusMessage.textContent = 'Merci ! Votre demande a bien été envoyée.';
+                statusMessage.textContent = 'Merci ! Votre expérience a bien été envoyée.';
                 statusMessage.style.color = 'green';
                 form.reset();
             })
             .catch(error => {
                 statusMessage.textContent = 'Erreur lors de l\'envoi. Veuillez réessayer plus tard.';
                 statusMessage.style.color = 'red';
-                console.error('Error:', error);
             })
             .finally(() => {
                 submitButton.disabled = false;
