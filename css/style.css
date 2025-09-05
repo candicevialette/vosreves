@@ -585,14 +585,14 @@ textarea {
     margin-top: 20px;
 }
 
-/* ... (Les styles pour "Une journée à", témoignages, etc. restent les mêmes) ... */
+/* ... (Tous les styles globaux, header, hero, etc. restent les mêmes) ... */
 
 /* ================================================= */
-/*         NOUVEAUX STYLES POUR LA PAGE CARTE        */
+/*         STYLES POUR LA PAGE CARTE (Mis à jour)     */
 /* ================================================= */
 #map-page-section {
-    padding-top: 120px; /* Espace pour le header fixe */
-    background-color: #f9f9f9;
+    padding-top: 120px;
+    background-color: #f8f9fa;
 }
 
 .map-layout {
@@ -603,58 +603,83 @@ textarea {
     background-color: white;
     padding: 30px;
     border-radius: 15px;
-    box-shadow: 0 10px 40px rgba(0,0,0,0.1);
+    box-shadow: 0 10px 40px rgba(0,0,0,0.08);
 }
 
-.map-container svg {
+.map-container {
+    position: relative;
     width: 100%;
-    height: auto;
+    padding-top: 56.25%; /* Ratio 16:9 pour le conteneur */
+    background-image: url('../img/world-map.png'); /* VOTRE IMAGE DE CARTE */
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
 }
-.land { fill: #e0e0e0; stroke: #fff; stroke-width: 1px; }
 
 .location-dot {
-    fill: var(--primary-color);
+    position: absolute;
+    width: 16px;
+    height: 16px;
+    background-color: var(--primary-color);
+    border-radius: 50%;
     cursor: pointer;
     transition: all 0.3s ease;
-    stroke: white;
-    stroke-width: 2px;
+    border: 3px solid white;
+    box-shadow: 0 0 10px rgba(0,0,0,0.3);
 }
 .location-dot:hover, .location-dot.active {
-    fill: #e67e22; /* Orange plus foncé */
-    r: 12; /* Agrandit le point au survol */
+    transform: scale(1.5);
+    background-color: #e67e22;
 }
 
+/* --- POSITIONNEMENT DES POINTS (en pourcentage pour être responsive) --- */
+/* Polynésie */
+[data-destination="fakarava"] { top: 62%; left: 24%; }
+[data-destination="tikehau"] { top: 60%; left: 24.5%; }
+[data-destination="rangiroa"] { top: 61%; left: 25%; }
+[data-destination="tuamotu"] { top: 63%; left: 25.5%; }
+
+/* Amérique du Nord */
+[data-destination="newyork"] { top: 35%; left: 28%; }
+[data-destination="californie"] { top: 40%; left: 18%; }
+[data-destination="quebec"] { top: 30%; left: 30%; }
+
+/* Nouvelles destinations */
+[data-destination="japon"] { top: 38%; left: 84%; }
+[data-destination="islande"] { top: 18%; left: 47%; }
+[data-destination="costarica"] { top: 52%; left: 25%; }
+[data-destination="perou"] { top: 65%; left: 28%; }
+[data-destination="tanzanie"] { top: 58%; left: 58%; }
+[data-destination="italie"] { top: 35%; left: 52%; }
+[data-destination="vietnam"] { top: 48%; left: 78%; }
+[data-destination="maroc"] { top: 42%; left: 48%; }
+[data-destination="argentine"] { top: 80%; left: 32%; }
+[data-destination="grece"] { top: 38%; left: 55%; }
+
+
 .destination-info-panel {
-    position: relative;
     height: 100%;
-    min-height: 400px;
 }
 .info-content {
-    position: absolute;
-    top: 0; left: 0;
-    width: 100%;
     opacity: 0;
     transition: opacity 0.5s ease;
-    visibility: hidden;
 }
 .info-content.active {
     opacity: 1;
-    visibility: visible;
+}
+.destination-image {
+    width: 100%;
+    height: 180px; /* Hauteur fixe pour l'image */
+    object-fit: cover; /* S'assure que l'image remplit l'espace sans se déformer */
+    border-radius: 10px;
+    margin-bottom: 20px;
 }
 .info-content h3 {
     color: var(--primary-color);
-    margin-bottom: 15px;
-}
-.info-content p {
-    line-height: 1.8;
+    margin-bottom: 10px;
 }
 
 /* ... (Le reste du CSS, footer, responsive, etc., reste identique) ... */
-@media (max-width: 992px) {
-    .map-layout {
-        grid-template-columns: 1fr;
-    }
-}
 /* ============================================= */
 /* ==       STYLE POUR LE BOUTON RETOUR       == */
 /* ============================================= */
