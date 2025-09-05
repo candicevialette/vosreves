@@ -316,7 +316,7 @@ fieldset.form-group legend {
     font-weight: 500;
     text-align: center;
 }
-* ============================================= */
+/* ============================================= */
 /* ==   STYLES POUR LE FORMULAIRE D'EXPÉRIENCE   == */
 /* ============================================= */
 
@@ -459,41 +459,38 @@ textarea {
 
 /* --- Conteneur de l'arrière-plan animé --- */
 .animation-background {
-    position: fixed; /* Reste en place même si on scrolle */
+    position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    z-index: -1; /* TRÈS IMPORTANT: place l'animation derrière tout le reste */
-    overflow: hidden; /* Empêche les barres de défilement causées par les poissons hors écran */
-    opacity: 0.15; /* Rend l'animation très subtile et légère */
+    z-index: -1;
+    overflow: hidden;
+    opacity: 0.6; /* MODIFIÉ : Opacité augmentée de 0.15 à 0.6 pour plus de visibilité */
 }
 
 /* --- L'animation de nage --- */
 @keyframes swim {
     0% {
-        transform: translate(-150px, 0) scaleX(-1); /* Commence à gauche, retourné */
+        transform: translate(-150px, 0) scaleX(-1);
     }
     49% {
-         transform: translate(calc(100vw / 2), -40px) scaleX(-1); /* Monte au milieu */
+         transform: translate(calc(100vw / 2), -40px) scaleX(-1);
     }
     50% {
-        transform: translate(calc(100vw / 2), -40px) scaleX(1); /* Se retourne au milieu */
+        transform: translate(calc(100vw / 2), -40px) scaleX(1);
     }
     100% {
-        transform: translate(calc(100vw + 150px), 0) scaleX(1); /* Finit à droite */
+        transform: translate(calc(100vw + 150px), 0) scaleX(1);
     }
 }
-
 
 /* --- Style de base pour chaque poisson --- */
 .fish {
     position: absolute;
-    color: #a4c9d7; /* Couleur bleu-gris pâle pour les poissons */
-    width: 100px; /* Taille de base */
-    will-change: transform; /* Optimisation pour la performance de l'animation */
-    
-    /* Application de l'animation */
+    color: #22577A; /* MODIFIÉ : Couleur changée pour un bleu foncé/profond */
+    width: 100px;
+    will-change: transform;
     animation-name: swim;
     animation-iteration-count: infinite;
     animation-timing-function: ease-in-out;
@@ -504,7 +501,7 @@ textarea {
     width: 80px;
     top: 20%;
     animation-duration: 25s;
-    animation-delay: -5s; /* Délai négatif pour qu'ils ne partent pas en même temps */
+    animation-delay: -5s;
 }
 
 .fish:nth-child(2) {
