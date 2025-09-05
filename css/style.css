@@ -684,3 +684,52 @@ textarea {
 .back-link:hover {
     color: #F5A623; /* Le texte devient orange au survol */
 }
+/* ============================================= */
+/* ==   STRUCTURE PAGE ET BOUTON RETOUR HAUT   == */
+/* ============================================= */
+
+/* Conteneur principal qui aligne le bouton retour et le formulaire */
+.main-content-wrapper {
+    width: 100%;
+    max-width: 800px; /* Un peu plus large pour l'aération */
+    padding: 0 20px;
+    box-sizing: border-box;
+    position: relative; /* Pour s'afficher correctement au-dessus de l'animation */
+    z-index: 1;
+}
+
+/* Le style du bouton retour, basé sur votre nouvelle image */
+.back-link-page {
+    display: inline-flex;
+    align-items: center;
+    text-decoration: none;
+    font-family: 'Lato', sans-serif;
+    font-weight: 600;
+    font-size: 16px;
+    color: #34495e;
+    margin-bottom: 25px; /* Espace entre le bouton et la carte du formulaire */
+    transition: all 0.2s ease;
+}
+
+.back-link-page::before {
+    content: '←';
+    color: #F5A623;
+    font-size: 20px;
+    margin-right: 8px;
+    font-weight: bold;
+    transition: transform 0.2s ease;
+}
+
+.back-link-page:hover {
+    color: #F5A623; /* Le texte devient orange */
+}
+
+.back-link-page:hover::before {
+    transform: translateX(-3px); /* La flèche recule un peu pour un effet dynamique */
+}
+
+
+/* Petit ajustement pour que le conteneur du formulaire corresponde à la nouvelle largeur */
+.submission-container {
+    max-width: 100%; /* Le conteneur prend maintenant la largeur du wrapper */
+}
