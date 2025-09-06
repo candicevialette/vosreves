@@ -1,6 +1,4 @@
-/* ================================================= */
-/*          RÉGLAGES GLOBAUX & VARIABLES             */
-/* ================================================= */
+/*RÉGLAGES GLOBAUX & VARIABLES*/
 :root {
     --primary-color: #f39c12;
     --dark-color: #000000;
@@ -24,30 +22,22 @@ h2 { font-size: 2.5rem; }
 .section-title p {
     font-size: 1.1rem;
     color: #666;
-    /* --- MODIFICATION APPLIQUÉE ICI --- */
-    /* Marge inférieure augmentée pour décaler le bouton */
     margin-bottom: 3rem;
 }
 
-/* ================================================= */
-/*                     HEADER & NAV                  */
-/* ================================================= */
+/*HEADER & NAV*/
 .main-header { position: absolute; top: 0; left: 0; width: 100%; z-index: 100; padding: 20px 0; }
 .main-nav { display: flex; justify-content: space-between; align-items: center; }
 .logo img { height: 60px; }
 .btn-primary { background-color: var(--primary-color); color: white; padding: 12px 25px; border-radius: 50px; text-decoration: none; font-weight: 500; transition: background-color 0.3s ease; }
 .btn-primary:hover { background-color: #e67e22; }
 
-/* ================================================= */
-/*                     SECTION HERO                  */
-/* ================================================= */
+/*SECTION HERO*/
 .hero { height: 100vh; background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('img/Une Journée à RANGIROA-20250702/12_Soir_Rangiroa2.jpg') no-repeat center center/cover; display: flex; justify-content: center; align-items: center; text-align: center; color: white; }
 .hero-content { max-width: 800px; }
 .hero-content p { font-size: 1.2rem; font-weight: 500; }
 
-/* ================================================= */
-/*                 AUTRES SECTIONS...                */
-/* ================================================= */
+/*AUTRES SECTIONS*/
 .presentation-grid, .memories-grid { display: grid; grid-template-columns: 1fr 1.5fr; gap: 60px; align-items: center; }
 .presentation-image img { width: 100%; border-radius: 10px; }
 .services-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px; }
@@ -99,11 +89,7 @@ h2 { font-size: 2.5rem; }
 }
 
 
-/* ================================================= */
 /*      SECTION PARTAGEZ VOTRE EXPÉRIENCE          */
-/* ================================================= */
-/* NOTE: Cette règle spécifique n'est plus nécessaire car la règle générale .section-title p s'en occupe déjà. */
-/* Vous pouvez la supprimer pour garder votre code propre. */
 #partagez .section-title h2 {
     font-size: 2.8rem;
     font-weight: 700;
@@ -118,9 +104,7 @@ h2 { font-size: 2.5rem; }
     margin: 0 auto 3rem auto; 
 }
 
-/* ================================================= */
-/*                       FOOTER                      */
-/* ================================================= */
+/*FOOTER*/
 .main-footer { background-color: var(--dark-color); color: #cccccc; padding: 60px 0 0; }
 .footer-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 40px; margin-bottom: 40px; }
 .footer-column h4 { color: var(--primary-color); margin-bottom: 20px; font-size: 1rem; font-weight: bold; }
@@ -134,9 +118,7 @@ h2 { font-size: 2.5rem; }
 .footer-socials a:hover { color: var(--primary-color); }
 .footer-bottom { border-top: 1px solid #333; text-align: center; padding: 20px 0; font-size: 0.9rem; color: #777; }
 
-/* ================================================= */
-/*      STYLES PAGE ARTICLE (MISE EN PAGE ESTHÉTIQUE) */
-/* ================================================= */
+/*STYLES PAGE ARTICLE*/
 .article-hero { min-height: 50vh; background-size: cover; background-position: center; display: flex; justify-content: center; align-items: center; text-align: center; color: white; position: relative; }
 .article-hero::before { content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(0,0,0,0.5); }
 .article-body { max-width: 750px; margin: 0 auto; font-size: 1.1rem; color: #333; }
@@ -158,9 +140,7 @@ h2 { font-size: 2.5rem; }
     object-fit: cover;
 }
 
-/* ================================================= */
-/*                 RESPONSIVE DESIGN                 */
-/* ================================================= */
+/*RESPONSIVE DESIGN*/
 @media (max-width: 992px) { .footer-grid { grid-template-columns: repeat(2, 1fr); } }
 @media (max-width: 768px) {
     h1 { font-size: 2.5rem; }
@@ -173,9 +153,7 @@ h2 { font-size: 2.5rem; }
     .main-nav .logo { margin-bottom: 20px; }
 }
 @media (max-width: 576px) { .destinations-grid, .inspiration-grid, .footer-grid { grid-template-columns: 1fr; } }
-/* ================================================= */
-/*          BOUTON RETOUR POUR LES ARTICLES          */
-/* ================================================= */
+/*BOUTON RETOUR POUR LES ARTICLES*/
 .btn-back {
     display: inline-block;
     margin-bottom: 2.5rem;
