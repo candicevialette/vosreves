@@ -10,11 +10,10 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Montserrat:wght@600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
 
-    <!-- ▼▼▼ LIEN VERS VOTRE FEUILLE DE STYLE CSS ▼▼▼ -->
     <link rel="stylesheet" href="css/style.css"> 
-    <!-- ▲▲▲ Assurez-vous que le chemin est correct ! ▲▲▲ -->
-
+    
 </head>
 <body class="form-page-body">
     <div class="animation-background">
@@ -111,7 +110,6 @@
         const statusMessage = document.getElementById('form-status');
         const submitButton = document.getElementById('submit-btn');
 
-        // COLLEZ L'URL DE VOTRE APPLICATION WEB GOOGLE ICI
         const googleAppScriptUrl = 'https://script.google.com/macros/s/AKfycby3em_z_lPlykqCff8h276QFUCIpPaZL57Keyst13v3D92GlnLZMo997morhKLYbbN4ZA/exec';
 
         form.addEventListener('submit', event => {
@@ -124,16 +122,14 @@
             const formData = new FormData(form);
             const data = Object.fromEntries(formData.entries());
 
-            // Gérer les checkboxes pour les envoyer comme une liste
             data.infos = formData.getAll('infos');
 
-            // Ajout des données requises par le professeur
             data.date_creation = new Date().toISOString();
             data.etat = "Nouveau";
 
             fetch(googleAppScriptUrl, {
                 method: 'POST',
-                mode: 'no-cors', // Important pour ce type de requête
+                mode: 'no-cors', 
                 headers: {
                     'Content-Type': 'application/json',
                 },
