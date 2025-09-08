@@ -783,76 +783,60 @@ textarea {
 }
 /*AVIS*/
 
-.review-grid {
+.testimonial-grid-cards {
     display: grid;
+    /* Crée une grille responsive qui s'adapte au nombre d'avis */
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 30px;
+    gap: 40px; /* Plus d'espace entre les cartes */
 }
 
-.review-card {
-    background: white;
-    border-radius: 15px;
-    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
+.testimonial-card-postit {
+    background: #fffef7; /* Couleur crème/papier */
     padding: 25px;
-    display: flex;
-    flex-direction: column;
-    transition: transform 0.3s ease, box-shadow 0.4s ease;
+    border-radius: 5px; /* Bords moins arrondis pour l'effet papier */
+    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border-bottom: 5px solid var(--primary-color);
 }
 
-.review-card:hover {
-    transform: translateY(-8px);
-    box-shadow: 0 12px S40px rgba(0, 0, 0, 0.12);
+/* Effet de rotation "post-it" différent pour chaque carte */
+.testimonial-card-postit:nth-child(4n-3) { transform: rotate(-2deg); }
+.testimonial-card-postit:nth-child(4n-2) { transform: rotate(1.5deg); }
+.testimonial-card-postit:nth-child(4n-1) { transform: rotate(-1deg); }
+.testimonial-card-postit:nth-child(4n)   { transform: rotate(2.5deg); }
+
+.testimonial-card-postit:hover {
+    transform: rotate(0deg) scale(1.05); /* La carte se redresse et grossit */
+    box-shadow: 10px 10px 25px rgba(0, 0, 0, 0.15);
+    z-index: 10;
 }
 
-.review-header {
-    display: flex;
-    align-items: center;
-    margin-bottom: 20px;
+.testimonial-author-info {
+    margin-bottom: 15px;
 }
 
-.review-avatar {
-    width: 60px;
-    height: 60px;
-    border-radius: 50%;
-    object-fit: cover;
-    margin-right: 15px;
-    border: 3px solid #f0f0f0;
-}
-
-.review-author h4 {
-    margin: 0 0 5px 0;
+.testimonial-author-info h4 {
+    margin: 0;
     font-family: 'Montserrat', sans-serif;
-    font-size: 1.1rem;
-    color: var(--text-color);
+    font-size: 1.2rem;
 }
 
-.review-stars {
+.testimonial-stars {
     color: var(--primary-color);
-    font-size: 0.9rem;
+    font-size: 1rem;
+    margin-top: 5px;
 }
 
-.review-text {
+.testimonial-quote {
     font-family: 'Lato', sans-serif;
-    color: #555;
-    line-height: 1.8;
-    font-style: italic;
-    flex-grow: 1; 
+    font-size: 1rem;
+    color: #333;
+    line-height: 1.7;
     margin-bottom: 20px;
-    position: relative;
-    padding-left: 15px;
-    border-left: 3px solid var(--primary-color);
 }
 
-.review-destination {
-    margin-top: auto; 
-    padding-top: 15px;
-    border-top: 1px solid #f2f2f2;
+.testimonial-destination {
     font-size: 0.85rem;
-    font-weight: 600;
+    font-weight: 700;
     color: #888;
-}
-
-.review-destination .fas {
-    color: var(--primary-color);
-    margin-right: 8px;
 }
