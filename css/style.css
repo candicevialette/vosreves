@@ -67,12 +67,12 @@ h2 { font-size: 2.5rem; }
 .destination-info h3 { margin-bottom: 5px; }
 .destination-info span { font-size: 0.9rem; }
 .article-body video {
-    display: block; /* Permet à la marge automatique de fonctionner pour le centrage */
-    width: 100%; /* La vidéo prendra la largeur de son conteneur (.article-body) */
-    max-width: 100%; /* S'assure qu'elle ne dépasse jamais son conteneur */
-    margin: 2.5rem auto; /* Marge verticale de 2.5rem et centrage horizontal */
-    border-radius: 10px; /* Bords arrondis pour l'esthétique */
-    box-shadow: 0 8px 25px rgba(0,0,0,0.1); /* Ombre légère pour donner du relief */
+    display: block; 
+    width: 100%; 
+    max-width: 100%; 
+    margin: 2.5rem auto;
+    border-radius: 10px;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.1); 
 }
 
 .gallery-container { padding-top: 0; padding-bottom: 0; }
@@ -89,7 +89,7 @@ h2 { font-size: 2.5rem; }
 }
 
 
-/*      SECTION PARTAGEZ VOTRE EXPÉRIENCE          */
+/*SECTION PARTAGEZ VOTRE EXPÉRIENCE*/
 #partagez .section-title h2 {
     font-size: 2.8rem;
     font-weight: 700;
@@ -120,7 +120,7 @@ h2 { font-size: 2.5rem; }
 .footer-bottom {
     border-top: 1px solid #333;
     text-align: center;
-    padding: 25px 20px; /* Un peu plus d'espace vertical */
+    padding: 25px 20px; 
     color: #777;}
 .footer-bottom p {
     margin: 0;
@@ -172,6 +172,7 @@ h2 { font-size: 2.5rem; }
     .main-nav .logo { margin-bottom: 20px; }
 }
 @media (max-width: 576px) { .destinations-grid, .inspiration-grid, .footer-grid { grid-template-columns: 1fr; } }
+
 /*BOUTON RETOUR POUR LES ARTICLES*/
 .btn-back {
     display: inline-block;
@@ -190,10 +191,9 @@ h2 { font-size: 2.5rem; }
 .btn-back:hover {
     color: var(--primary-color);
 }
-/* =================================
-   Styles pour la page de soumission
-   ================================= */
-.page-header {
+
+/*Styles pour la page de soumission*/
+ .page-header {
     text-align: center;
     margin-bottom: 3rem;
 }
@@ -254,11 +254,9 @@ h2 { font-size: 2.5rem; }
     padding: 1rem 2.5rem;
     font-size: 1.1rem;
 }
-/* =============================
-   STYLES POUR FORMULAIRE DE CONTACT
-   ============================= */
 
-.submission-form {
+  /*STYLES POUR FORMULAIRE DE CONTACT*/
+  .submission-form {
     max-width: 800px;
     margin: 2rem auto 0;
     padding: 2rem;
@@ -333,16 +331,9 @@ fieldset.form-group legend {
     font-weight: 500;
     text-align: center;
 }
-/* ============================================= */
-/* ==   STYLES POUR LE FORMULAIRE D'EXPÉRIENCE   == */
-/* ============================================= */
 
-/* --- Conteneur principal de la page du formulaire --- */
-/* Note : Ces styles s'appliqueront au body de la page du formulaire. 
-   Si cette page partage un body avec le reste de votre site, 
-   vous pouvez envelopper le formulaire dans un div spécifique 
-   (ex: <div class="form-page-wrapper">) et appliquer ces styles à ce div. */
-.form-page-body { /* Ajoutez cette classe à votre balise <body> sur la page du formulaire */
+/*STYLES POUR LE FORMULAIRE D'EXPÉRIENCE*/
+.form-page-body { 
     background-color: #f8f9fa;
     display: flex;
     justify-content: center;
@@ -351,8 +342,8 @@ fieldset.form-group legend {
     min-height: 100vh;
 }
 
-/* --- Conteneur du formulaire (style "Carte") --- */
-.submission-container { /* Renommé pour plus de clarté */
+/*Conteneur du formulaire */
+.submission-container { 
     max-width: 700px;
     width: 100%;
     background-color: #ffffff;
@@ -361,8 +352,8 @@ fieldset.form-group legend {
     box-shadow: 0 8px 30px rgba(0, 0, 0, 0.07);
 }
 
-/* --- En-tête du formulaire --- */
-.submission-header { /* Renommé pour plus de clarté */
+
+.submission-header {
     text-align: center;
     margin-bottom: 40px;
 }
@@ -380,7 +371,7 @@ fieldset.form-group legend {
     color: #7f8c8d;
 }
 
-/* --- Champs de formulaire --- */
+/*Champs de formulaire*/
 .form-group {
     margin-bottom: 25px;
 }
@@ -396,7 +387,7 @@ input[type="text"],
 input[type="email"],
 textarea {
     width: 100%;
-    box-sizing: border-box; /* Assure que le padding n'augmente pas la largeur */
+    box-sizing: border-box; 
     padding: 15px;
     border: 1px solid #dfe6e9;
     border-radius: 8px;
@@ -433,7 +424,7 @@ textarea {
     margin-top: 15px;
 }
 
-.btn-primary.submit-experience { /* Classe plus spécifique pour éviter les conflits */
+.btn-primary.submit-experience { 
     background-color: #F5A623;
     color: white;
     font-family: 'Montserrat', sans-serif;
@@ -459,7 +450,7 @@ textarea {
     box-shadow: none;
 }
 
-/* --- Message de statut --- */
+/* Message de statut*/
 #form-status {
     text-align: center;
     margin-top: 20px;
@@ -472,23 +463,19 @@ textarea {
 .status-sending { color: #34495e; }
 
 
-/* ============================================= */
 /* == MISE À JOUR POUR LE CENTRAGE DE LA PAGE == */
-/* ============================================= */
-
-/* Assurez-vous que votre classe pour le body ressemble bien à ça */
 .form-page-body {
     background-color: #f8f9fa;
     display: flex;
-    justify-content: center; /* Centre horizontalement */
-    align-items: center;   /* Centre verticalement */
+    justify-content: center; 
+    align-items: center;  
     padding: 40px 20px;
-    min-height: 100vh;     /* Fait en sorte que la page prenne au moins toute la hauteur de l'écran */
-    margin: 0; /* Supprime la marge par défaut du body */
+    min-height: 100vh;   
+    margin: 0; 
 }
-/* ============================================= */
-/* ==       STYLE POUR LE BOUTON RETOUR       == */
-/* ============================================= */
+
+/*STYLE POUR LE BOUTON RETOUR*/
+
 
 .back-link {
     display: inline-flex;
@@ -497,30 +484,26 @@ textarea {
     font-family: 'Montserrat', sans-serif;
     font-weight: 600;
     font-size: 1.1em;
-    color: #34495e; /* Couleur du texte gris foncé */
-    margin-bottom: 30px; /* Espace avant le titre du formulaire */
+    color: #34495e; 
+    margin-bottom: 30px; 
     transition: color 0.3s ease-in-out;
 }
 
 /* --- Création de la flèche orange --- */
 .back-link::before {
-    content: '←'; /* Caractère flèche */
-    color: #F5A623; /* Couleur orange du thème */
-    font-size: 1.4em; /* Rend la flèche un peu plus grande */
-    margin-right: 10px; /* Espace entre la flèche et le texte */
+    content: '←'; 
+    color: #F5A623; 
+    font-size: 1.4em; 
+    margin-right: 10px; 
     font-weight: bold;
 }
 
 /* --- Effet au survol --- */
 .back-link:hover {
-    color: #F5A623; /* Le texte devient orange au survol */
+    color: #F5A623; 
 }
-/* ... (Tous les styles globaux, header, hero, etc. restent les mêmes) ... */
 
-/* ================================================= */
-/*       SECTION CRÉATION DE SOUVENIRS (MISE À JOUR) */
-/* ================================================= */
-/* Ancien style de grille à 2 colonnes supprimé */
+/*SECTION CRÉATION DE SOUVENIRS*/
 .memories-grid-updated {
     text-align: center;
 }
@@ -532,13 +515,8 @@ textarea {
     margin-top: 20px;
 }
 
-/* ... (Tous les styles globaux, header, hero, etc. restent les mêmes) ... */
 
-
-/* ============================================= */
-/* ==       STYLE POUR LE BOUTON RETOUR       == */
-/* ============================================= */
-
+/* ==STYLE POUR LE BOUTON RETOUR*/
 .back-link {
     display: inline-flex;
     align-items: center;
@@ -546,39 +524,35 @@ textarea {
     font-family: 'Montserrat', sans-serif;
     font-weight: 600;
     font-size: 1.1em;
-    color: #34495e; /* Couleur du texte gris foncé */
-    margin-bottom: 30px; /* Espace avant le titre du formulaire */
+    color: #34495e; 
+    margin-bottom: 30px; 
     transition: color 0.3s ease-in-out;
 }
 
 /* --- Création de la flèche orange --- */
 .back-link::before {
-    content: '←'; /* Caractère flèche */
-    color: #F5A623; /* Couleur orange du thème */
-    font-size: 1.4em; /* Rend la flèche un peu plus grande */
-    margin-right: 10px; /* Espace entre la flèche et le texte */
+    content: '←'; 
+    color: #F5A623; 
+    font-size: 1.4em; 
+    margin-right: 10px; 
     font-weight: bold;
 }
 
 /* --- Effet au survol --- */
 .back-link:hover {
-    color: #F5A623; /* Le texte devient orange au survol */
+    color: #F5A623; 
 }
-/* ============================================= */
-/* ==   STRUCTURE PAGE ET BOUTON RETOUR HAUT   == */
-/* ============================================= */
 
-/* Conteneur principal qui aligne le bouton retour et le formulaire */
+/* ==   STRUCTURE PAGE ET BOUTON RETOUR HAUT   == */
 .main-content-wrapper {
     width: 100%;
-    max-width: 800px; /* Un peu plus large pour l'aération */
+    max-width: 800px; 
     padding: 0 20px;
     box-sizing: border-box;
-    position: relative; /* Pour s'afficher correctement au-dessus de l'animation */
+    position: relative; 
     z-index: 1;
 }
 
-/* Le style du bouton retour, basé sur votre nouvelle image */
 .back-link-page {
     display: inline-flex;
     align-items: center;
@@ -587,7 +561,7 @@ textarea {
     font-weight: 600;
     font-size: 16px;
     color: #34495e;
-    margin-bottom: 25px; /* Espace entre le bouton et la carte du formulaire */
+    margin-bottom: 25px;
     transition: all 0.2s ease;
 }
 
@@ -601,17 +575,14 @@ textarea {
 }
 
 .back-link-page:hover {
-    color: #F5A623; /* Le texte devient orange */
+    color: #F5A623; 
 }
 
 .back-link-page:hover::before {
-    transform: translateX(-3px); /* La flèche recule un peu pour un effet dynamique */
+    transform: translateX(-3px); 
 }
-
-
-/* Petit ajustement pour que le conteneur du formulaire corresponde à la nouvelle largeur */
 .submission-container {
-    max-width: 100%; /* Le conteneur prend maintenant la largeur du wrapper */
+    max-width: 100%; 
 }
 /*STYLES POUR L'ANIMATION*/
 /* --- Conteneur de l'arrière-plan animé --- */
@@ -681,9 +652,8 @@ textarea {
     animation-duration: 22s;
     animation-delay: -10s;
 }
-/* ================================================= */
-/*         STYLES POUR LA PAGE CARTE (FINAL)         */
-/* ================================================= */
+/*STYLES POUR LA PAGE CARTE*/
+
 #map-page-section {
     padding-top: 120px;
     background-color: #f8f9fa;
@@ -780,28 +750,25 @@ textarea {
         grid-template-columns: 1fr;
     }
 }
-/* ============================================= */
-/* ==   NOUVEAUX STYLES PAGE MENTIONS LEGALES  == */
-/* ============================================= */
 
+/*MENTIONS LEGALES*/
 .legal-text-content {
     text-align: left;
-    color: #34495e; /* Couleur de texte sobre */
+    color: #34495e; 
     line-height: 1.8;
 }
 
 .legal-text-content h2 {
     font-family: 'Montserrat', sans-serif;
-    font-size: 1.5em; /* Taille de titre secondaire */
+    font-size: 1.5em; 
     font-weight: 700;
     color: #2c3e50;
     margin-top: 35px;
     margin-bottom: 15px;
     padding-bottom: 8px;
-    border-bottom: 2px solid #f0f0f0; /* Ligne de séparation discrète */
+    border-bottom: 2px solid #f0f0f0; 
 }
 
-/* Premier h2 n'a pas besoin de marge en haut */
 .legal-text-content h2:first-of-type {
     margin-top: 0;
 }
