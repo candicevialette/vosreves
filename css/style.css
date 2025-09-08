@@ -764,46 +764,38 @@ textarea {
         grid-template-columns: 1fr;
     }
 }
-* ============================================= */
-/* ==       STYLES PAGE MENTIONS LEGALES      == */
+/* ============================================= */
+/* ==   NOUVEAUX STYLES PAGE MENTIONS LEGALES  == */
 /* ============================================= */
 
-.legal-section {
-    padding-top: 150px; /* Espace pour ne pas être sous le header */
-    padding-bottom: 80px;
-    background-color: #f8f9fa; /* Un fond légèrement gris pour la page */
+.legal-text-content {
+    text-align: left;
+    color: #34495e; /* Couleur de texte sobre */
+    line-height: 1.8;
 }
 
-.legal-content {
-    max-width: 800px; /* Limite la largeur du texte pour une meilleure lisibilité */
-    margin: 0 auto;  /* Centre le bloc de contenu */
-    background-color: #ffffff; /* Un fond blanc pour le texte */
-    padding: 40px 50px;
-    border-radius: 10px;
-    box-shadow: 0 5px 25px rgba(0,0,0,0.07);
+.legal-text-content h2 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.5em; /* Taille de titre secondaire */
+    font-weight: 700;
+    color: #2c3e50;
+    margin-top: 35px;
+    margin-bottom: 15px;
+    padding-bottom: 8px;
+    border-bottom: 2px solid #f0f0f0; /* Ligne de séparation discrète */
 }
 
-.legal-content h1,
-.legal-content h2 {
-    color: var(--text-color);
-    margin-bottom: 1.5rem;
+/* Premier h2 n'a pas besoin de marge en haut */
+.legal-text-content h2:first-of-type {
+    margin-top: 0;
 }
 
-.legal-content h2 {
-    margin-top: 2rem;
-    border-bottom: 2px solid var(--primary-color);
-    padding-bottom: 0.5rem;
+.legal-text-content p {
+    margin-bottom: 15px;
+    font-family: 'Lato', sans-serif;
 }
 
-.legal-content p {
-    margin-bottom: 1rem
- .footer-legal-link {
-        color: #cccccc;
-        text-decoration: none;
-        margin-right: 20px;
-        transition: color 0.3s ease;
-    }
-    
-    .footer-legal-link:hover {
-        color: white;
-    }
+.legal-text-content strong {
+    font-weight: 700;
+    color: #34495e;
+}
