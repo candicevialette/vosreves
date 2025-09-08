@@ -797,3 +797,13 @@ textarea {
 
 .legal-content p {
     margin-bottom: 1rem
+ .footer-legal-link {
+        color: #cccccc;
+        text-decoration: none;
+        margin-right: 20px;
+        transition: color 0.3s ease;
+    }
+    
+    .footer-legal-link:hover {
+        color: white;
+    }
