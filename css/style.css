@@ -48,14 +48,14 @@ h2 { font-size: 2.5rem; }
 .memories-images .image-back { top: 0; left: 0; transform: rotate(-8deg); }
 .memories-images .image-front { bottom: 0; right: 0; z-index: 2; transform: rotate(6deg); }
 .airplane-icon { position: absolute; top: -20px; right: 50px; font-size: 2rem; color: var(--text-color); transform: rotate(20deg); opacity: 0.7; }
-.testimonials-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px; }
+/*.testimonials-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px; }
 .testimonial-card { background: white; padding: 30px; border-radius: 10px; box-shadow: 0 5px 15px rgba(0,0,0,0.05); }
 .testimonial-author { margin-top: 20px; }
-.testimonial-author span { font-weight: bold; }
-.inspiration-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; }
+.testimonial-author span { font-weight: bold; }*/
+/*.inspiration-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; }
 .inspiration-card { border-radius: 15px; overflow: hidden; cursor: pointer; }
 .inspiration-card img { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform 0.4s ease-out; }
-.inspiration-card:hover img { transform: scale(1.1); }
+.inspiration-card:hover img { transform: scale(1.1); }*/
 
 /*UNE JOURNÉE À...*/
 .destinations-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 30px; }
@@ -113,9 +113,9 @@ h2 { font-size: 2.5rem; }
 .footer-column ul { list-style: none; padding: 0; }
 .footer-column a { color: #cccccc; text-decoration: none; transition: color 0.3s ease; }
 .footer-column a:hover { color: white; }
-.footer-socials { margin-top: 20px; }
+/*.footer-socials { margin-top: 20px; }
 .footer-socials a { color: #cccccc; font-size: 1.2rem; margin-right: 15px; }
-.footer-socials a:hover { color: var(--primary-color); }
+.footer-socials a:hover { color: var(--primary-color); }*/
 .footer-bottom { border-top: 1px solid #333; text-align: center; padding: 20px 0; font-size: 0.9rem; color: #777; }
 .footer-bottom {
     border-top: 1px solid #333;
@@ -234,10 +234,6 @@ h2 { font-size: 2.5rem; }
 
 .form-group textarea {
     resize: vertical;
-}
-
-.form-group input[type="file"] {
-    font-size: 0.9rem;
 }
 
 .form-hint {
@@ -463,7 +459,7 @@ textarea {
 .status-sending { color: #34495e; }
 
 
-/* == MISE À JOUR POUR LE CENTRAGE DE LA PAGE == */
+/*MISE À JOUR POUR LE CENTRAGE DE LA PAGE*/
 .form-page-body {
     background-color: #f8f9fa;
     display: flex;
@@ -477,7 +473,7 @@ textarea {
 /*STYLE POUR LE BOUTON RETOUR*/
 
 
-.back-link {
+/*.back-link {
     display: inline-flex;
     align-items: center;
     text-decoration: none;
@@ -486,11 +482,11 @@ textarea {
     font-size: 1.1em;
     color: #34495e; 
     margin-bottom: 30px; 
-    transition: color 0.3s ease-in-out;
+    transition: color 0.3s ease-in-out;*/
 }
 
 /* --- Création de la flèche orange --- */
-.back-link::before {
+/*.back-link::before {
     content: '←'; 
     color: #F5A623; 
     font-size: 1.4em; 
@@ -501,20 +497,7 @@ textarea {
 /* --- Effet au survol --- */
 .back-link:hover {
     color: #F5A623; 
-}
-
-/*SECTION CRÉATION DE SOUVENIRS*/
-.memories-grid-updated {
-    text-align: center;
-}
-.memories-text {
-    max-width: 700px;
-    margin: 0 auto;
-}
-.memories-text .btn-primary {
-    margin-top: 20px;
-}
-
+}*/
 
 /* ==STYLE POUR LE BOUTON RETOUR*/
 .back-link {
@@ -651,105 +634,6 @@ textarea {
     animation-duration: 22s;
     animation-delay: -10s;
 }
-/*STYLES POUR LA PAGE CARTE*/
-
-#map-page-section {
-    padding-top: 120px;
-    background-color: #f8f9fa;
-    min-height: 100vh;
-}
-
-.map-layout {
-    display: grid;
-    grid-template-columns: 2fr 1fr;
-    gap: 40px;
-    align-items: flex-start;
-    background-color: white;
-    padding: 30px;
-    border-radius: 15px;
-    box-shadow: 0 10px 40px rgba(0,0,0,0.08);
-}
-
-.map-container {
-    position: relative;
-    width: 100%;
-    padding-top: 56.25%; /* Ratio 16:9 pour le conteneur */
-    background-image: url('../img/cartemonde.png'); /* IMPORTANT: VOTRE IMAGE DE CARTE */
-    background-size: contain;
-    background-repeat: no-repeat;
-    background-position: center;
-    border-radius: 10px;
-}
-
-.location-dot {
-    position: absolute;
-    width: 16px;
-    height: 16px;
-    background-color: var(--primary-color);
-    border-radius: 50%;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    border: 3px solid white;
-    box-shadow: 0 0 10px rgba(0,0,0,0.3);
-    transform: translate(-50%, -50%);
-}
-.location-dot:hover, .location-dot.active {
-    transform: translate(-50%, -50%) scale(1.5);
-    background-color: #e67e22;
-}
-
-/* --- POSITIONNEMENT PRÉCIS DE CHAQUE POINT --- */
-[data-destination="fakarava"] { top: 62%; left: 24%; }
-[data-destination="tikehau"] { top: 60%; left: 24.5%; }
-[data-destination="rangiroa"] { top: 61%; left: 25%; }
-[data-destination="tuamotu"] { top: 63%; left: 25.5%; }
-[data-destination="newyork"] { top: 35%; left: 28%; }
-[data-destination="californie"] { top: 40%; left: 18%; }
-[data-destination="quebec"] { top: 30%; left: 30%; }
-[data-destination="japon"] { top: 38%; left: 84%; }
-[data-destination="islande"] { top: 18%; left: 47%; }
-[data-destination="costarica"] { top: 52%; left: 25%; }
-[data-destination="perou"] { top: 65%; left: 28%; }
-[data-destination="tanzanie"] { top: 58%; left: 58%; }
-[data-destination="italie"] { top: 35%; left: 52%; }
-[data-destination="vietnam"] { top: 48%; left: 78%; }
-[data-destination="maroc"] { top: 42%; left: 48%; }
-[data-destination="argentine"] { top: 80%; left: 32%; }
-[data-destination="grece"] { top: 38%; left: 55%; }
-
-.destination-info-panel {
-    height: 100%;
-}
-.info-content {
-    opacity: 0;
-    transition: opacity 0.5s ease;
-    visibility: hidden;
-}
-.info-content.active {
-    opacity: 1;
-    visibility: visible;
-}
-.destination-image {
-    width: 100%;
-    height: auto;
-    aspect-ratio: 4 / 3;
-    object-fit: cover;
-    border-radius: 10px;
-    margin-bottom: 20px;
-}
-.info-content h3 {
-    color: var(--primary-color);
-    margin-bottom: 10px;
-    font-weight: 700;
-}
-
-/* --- Responsive pour la carte --- */
-@media (max-width: 992px) {
-    .map-layout {
-        grid-template-columns: 1fr;
-    }
-}
-
 /*MENTIONS LEGALES*/
 .legal-text-content {
     text-align: left;
