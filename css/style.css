@@ -117,7 +117,26 @@ h2 { font-size: 2.5rem; }
 .footer-socials a { color: #cccccc; font-size: 1.2rem; margin-right: 15px; }
 .footer-socials a:hover { color: var(--primary-color); }
 .footer-bottom { border-top: 1px solid #333; text-align: center; padding: 20px 0; font-size: 0.9rem; color: #777; }
-
+.footer-bottom {
+    border-top: 1px solid #333;
+    text-align: center;
+    padding: 25px 20px; /* Un peu plus d'espace vertical */
+    color: #777;}
+.footer-bottom p {
+    margin: 0;
+    font-size: 0.9rem;
+    color: #777; /}
+.footer-legal-link {
+    display: block; 
+    margin-bottom: 15px; 
+    color: #a9a9a9; 
+    text-decoration: none; 
+    font-size: 0.9rem;
+    transition: color 0.3s ease;}
+.footer-legal-link:hover {
+    color: var(--primary-color);
+    text-decoration: underline; }
+    
 /*STYLES PAGE ARTICLE*/
 .article-hero { min-height: 50vh; background-size: cover; background-position: center; display: flex; justify-content: center; align-items: center; text-align: center; color: white; position: relative; }
 .article-hero::before { content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(0,0,0,0.5); }
@@ -594,12 +613,9 @@ textarea {
 .submission-container {
     max-width: 100%; /* Le conteneur prend maintenant la largeur du wrapper */
 }
-/* ============================================= */
-/* ==       STYLES POUR L'ANIMATION           == */
-/* ============================================= */
-
+/*STYLES POUR L'ANIMATION*/
 /* --- Conteneur de l'arrière-plan animé --- */
-.animation-background {
+/*.animation-background {
     position: fixed;
     top: 0;
     left: 0;
@@ -611,7 +627,7 @@ textarea {
 }
 
 /* --- L'animation de nage --- */
-@keyframes swim {
+/*@keyframes swim {
     0% {
         transform: translate(-150px, 0) scaleX(-1);
     }
@@ -627,10 +643,10 @@ textarea {
 }
 
 /* --- Style de base pour chaque poisson --- */
-.fish {
+/*.fish {
     position: absolute;
     color: #22577A; /* MODIFIÉ : Couleur changée pour un bleu foncé/profond */
-    width: 100px;
+  /*  width: 100px;
     will-change: transform;
     animation-name: swim;
     animation-iteration-count: infinite;
@@ -638,7 +654,7 @@ textarea {
 }
 
 /* --- Personnalisation de chaque poisson pour un effet naturel --- */
-.fish:nth-child(1) {
+/*.fish:nth-child(1) {
     width: 80px;
     top: 20%;
     animation-duration: 25s;
