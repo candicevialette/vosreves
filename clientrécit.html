@@ -1,84 +1,120 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-    <meta charset="UTF-8"> 
+    <meta charset="UTF-8">
+    
+    <!-- EN-TÊTES DE SÉCURITÉ -->
+    <meta http-equiv="X-Frame-Options" content="DENY">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' https://fonts.googleapis.com https://cdnjs.cloudflare.com 'unsafe-inline'; font-src 'self' https://fonts.gstatic.com https://cdnjs.cloudflare.com; img-src 'self' data:;">
+
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Partagez votre expérience - Votre Agence</title>
     <meta name="description" content="Proposez votre propre récit de voyage et partagez votre 'journée à...' avec la communauté de Vos Rêves.">
     
-    <!-- Lien vers les polices Google Fonts -->
+    <!-- Liens CSS -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Montserrat:wght@600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
-    
     <link rel="stylesheet" href="css/style.css"> 
 </head>
 <body class="form-page-body">
-    <div class="animation-background">
-        <div class="fish">
-            <!-- SVG d'un poisson -->
-            <svg viewBox="0 0 100 50" xmlns="http://www.w3.org/2000/svg"><path d="M99.12,23.49a2,2,0,0,0-1.23-1.83,12.78,12.78,0,0,1-8-8.25c-1-3.44-6.19-3.23-6.19-3.23a27.1,27.1,0,0,0-15.1,1.59,27.24,27.24,0,0,0-15.1,1.59S48,10.23,47,13.67a12.78,12.78,0,0,1-8,8.25,2,2,0,0,0-1.23,1.83L0,25l37.77,1.51a2,2,0,0,0,1.23,1.83,12.78,12.78,0,0,1,8,8.25c1,3.44,6.19,3.23,6.19,3.23a27.1,27.1,0,0,0,15.1-1.59,27.24,27.24,0,0,0,15.1-1.59S97,41.23,98,37.79a12.78,12.78,0,0,1,8-8.25,2,2,0,0,0,1.23-1.83Z" fill="currentColor"/></svg>
-        </div>
-        <div class="fish">
-             <svg viewBox="0 0 100 50" xmlns="http://www.w3.org/2000/svg"><path d="M99.12,23.49a2,2,0,0,0-1.23-1.83,12.78,12.78,0,0,1-8-8.25c-1-3.44-6.19-3.23-6.19-3.23a27.1,27.1,0,0,0-15.1,1.59,27.24,27.24,0,0,0-15.1,1.59S48,10.23,47,13.67a12.78,12.78,0,0,1-8,8.25,2,2,0,0,0-1.23,1.83L0,25l37.77,1.51a2,2,0,0,0,1.23,1.83,12.78,12.78,0,0,1,8,8.25c1,3.44,6.19,3.23,6.19,3.23a27.1,27.1,0,0,0,15.1-1.59,27.24,27.24,0,0,0,15.1-1.59S97,41.23,98,37.79a12.78,12.78,0,0,1,8-8.25,2,2,0,0,0,1.23-1.83Z" fill="currentColor"/></svg>
-        </div>
-        <div class="fish">
-            <svg viewBox="0 0 100 50" xmlns="http://www.w3.org/2000/svg"><path d="M99.12,23.49a2,2,0,0,0-1.23-1.83,12.78,12.78,0,0,1-8-8.25c-1-3.44-6.19-3.23-6.19-3.23a27.1,27.1,0,0,0-15.1,1.59,27.24,27.24,0,0,0-15.1,1.59S48,10.23,47,13.67a12.78,12.78,0,0,1-8,8.25,2,2,0,0,0-1.23,1.83L0,25l37.77,1.51a2,2,0,0,0,1.23,1.83,12.78,12.78,0,0,1,8,8.25c1,3.44,6.19,3.23,6.19,3.23a27.1,27.1,0,0,0,15.1-1.59,27.24,27.24,0,0,0,15.1-1.59S97,41.23,98,37.79a12.78,12.78,0,0,1,8-8.25,2,2,0,0,0,1.23-1.83Z" fill="currentColor"/></svg>
-        </div>
-        <div class="fish">
-            <svg viewBox="0 0 100 50" xmlns="http://www.w3.org/2000/svg"><path d="M99.12,23.49a2,2,0,0,0-1.23-1.83,12.78,12.78,0,0,1-8-8.25c-1-3.44-6.19-3.23-6.19-3.23a27.1,27.1,0,0,0-15.1,1.59,27.24,27.24,0,0,0-15.1,1.59S48,10.23,47,13.67a12.78,12.78,0,0,1-8,8.25,2,2,0,0,0-1.23,1.83L0,25l37.77,1.51a2,2,0,0,0,1.23,1.83,12.78,12.78,0,0,1,8,8.25c1,3.44,6.19,3.23,6.19,3.23a27.1,27.1,0,0,0,15.1-1.59,27.24,27.24,0,0,0,15.1-1.59S97,41.23,98,37.79a12.78,12.78,0,0,1,8-8.25,2,2,0,0,0,1.23-1.83Z" fill="currentColor"/></svg>
-        </div>
-    </div>
-      <div class="main-content-wrapper">
-            <a href="https://candicevialette.github.io/vosreves//index.html" class="btn-back">
-            <i class="fas fa-arrow-left"></i> Retour</a>
-    <div class="submission-container">
-        <div class="submission-header">
-            <h1>Partagez votre expérience</h1>
-            <p class="page-intro">Racontez-nous votre histoire. Les plus beaux récits seront publiés sur notre site !</p>
-        </div>
+    <!-- ... votre animation de fond ... -->
+    <div class="animation-background"> ... </div>
 
-        <form id="experience-form">
-            <div class="form-group">
-                <label for="prenom">Votre prénom :</label>
-                <input type="text" id="prenom" name="prenom" required>
+    <div class="main-content-wrapper">
+        <a href="https://candicevialette.github.io/vosreves/index.html" class="btn-back">
+            <i class="fas fa-arrow-left"></i> Retour
+        </a>
+        <div class="submission-container">
+            <div class="submission-header">
+                <h1>Partagez votre expérience</h1>
+                <p class="page-intro">Racontez-nous votre histoire. Les plus beaux récits seront publiés sur notre site !</p>
             </div>
-            <div class="form-group">
-                <label for="initiale_nom">Première lettre de votre nom de famille :</label>
-                <input type="text" id="initiale_nom" name="initiale_nom" maxlength="1" required>
-            </div>
-            <div class="form-group">
-                <label for="email">Votre adresse mail :</label>
-                <input type="email" id="email" name="email" placeholder="exemple@domaine.com" required>
-                <p class="form-hint">
-                    Nous utiliserons cet e-mail uniquement si votre récit est sélectionné, pour vous demander vos photos et vidéos.
-                </p>
-            </div>
-            <div class="form-group">
-                <label for="destination">Quelle était votre destination ?</label>
-                <input type="text" id="destination" name="destination" placeholder="Le lieu de votre expérience" required>
-            </div>
-            <div class="form-group">
-                <label for="recit">Le récit de votre journée :</label>
-                <textarea id="recit" name="recit" rows="10" placeholder="Décrivez votre journée, les lieux visités, vos émotions, vos conseils..." required></textarea>
-            </div>
-            <div class="form-actions">
-                <button type="submit" id="submit-btn" class="btn-primary submit-experience">Envoyer mon expérience</button>
-            </div>
-            <p id="form-status"></p>
-        </form>
+
+            <form id="experience-form">
+                <div class="form-group">
+                    <label for="prenom">Votre prénom :</label>
+                    <input type="text" id="prenom" name="prenom" required maxlength="100">
+                </div>
+                <div class="form-group">
+                    <label for="initiale_nom">Première lettre de votre nom de famille :</label>
+                    <input type="text" id="initiale_nom" name="initiale_nom" required maxlength="1" pattern="[A-Za-z]">
+                </div>
+                <div class="form-group">
+                    <label for="email">Votre adresse mail :</label>
+                    <input type="email" id="email" name="email" placeholder="exemple@domaine.com" required maxlength="250">
+                    <p class="form-hint">
+                        Nous utiliserons cet e-mail uniquement si votre récit est sélectionné.
+                    </p>
+                </div>
+                <div class="form-group">
+                    <label for="destination">Quelle était votre destination ?</label>
+                    <input type="text" id="destination" name="destination" placeholder="Le lieu de votre expérience" required maxlength="150">
+                </div>
+                <div class="form-group">
+                    <label for="recit">Le récit de votre journée :</label>
+                    <textarea id="recit" name="recit" rows="10" placeholder="Décrivez votre journée, les lieux visités, vos émotions..." required maxlength="5000"></textarea>
+                </div>
+
+                <!-- SÉCURITÉ : Champ "pot de miel" invisible pour les robots -->
+                <div class="honeypot-field" style="position: absolute; left: -5000px;" aria-hidden="true">
+                    <label for="website">Ne pas remplir ce champ</label>
+                    <input type="text" id="website" name="website" tabindex="-1" autocomplete="off">
+                </div>
+
+                <div class="form-actions">
+                    <button type="submit" id="submit-btn" class="btn-primary submit-experience">Envoyer mon expérience</button>
+                </div>
+                <p id="form-status"></p>
+            </form>
+        </div>
     </div>
 
     <script>
         const form = document.getElementById('experience-form');
         const statusMessage = document.getElementById('form-status');
         const submitButton = document.getElementById('submit-btn');
+        const googleAppScriptUrl = 'VOTRE_URL_DE_SCRIPT_GOOGLE_ICI';
 
-        const googleAppScriptUrl = 'https://script.google.com/macros/s/AKfycbwdSOP6WDoJ5J7mcHSj824dLe0NshqhUNGLATF4IDG9J35WqsxnKnjVkOzV8jw1TkM8YA/exec';
+        // NOUVEAU : Fonction pour détecter les caractères de code
+        function containsHtml(str) {
+            return /[<>]/g.test(str);
+        }
+
+        // NOUVEAU : Vérification en temps réel des champs de texte
+        const fieldsToSanitize = [document.getElementById('prenom'), document.getElementById('destination'), document.getElementById('recit')];
+        fieldsToSanitize.forEach(field => {
+            field.addEventListener('input', () => {
+                if (containsHtml(field.value)) {
+                    statusMessage.textContent = 'Attention : Les caractères < et > ne sont pas autorisés.';
+                    statusMessage.className = 'status-error';
+                    submitButton.disabled = true;
+                } else {
+                    statusMessage.textContent = '';
+                    statusMessage.className = '';
+                    submitButton.disabled = false;
+                }
+            });
+        });
 
         form.addEventListener('submit', event => {
             event.preventDefault();
+            
+            // Vérification finale avant envoi
+            let hasInvalidChars = false;
+            fieldsToSanitize.forEach(field => {
+                if (containsHtml(field.value)) {
+                    hasInvalidChars = true;
+                }
+            });
+
+            if (hasInvalidChars) {
+                statusMessage.textContent = 'Veuillez retirer les caractères < et > de vos textes.';
+                statusMessage.className = 'status-error';
+                return; // Bloque l'envoi
+            }
+
             statusMessage.textContent = 'Envoi en cours...';
             statusMessage.className = 'status-sending';
             submitButton.disabled = true;
